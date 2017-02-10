@@ -39,5 +39,26 @@
 <p>Zudem braucht man MonoGame for Visual Studio. </p> 
 <p>&gt;&gt;&gt;<a href="http://www.monogame.net/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
 
-<h2 id="Nr4">Einrichten der IDE unter Linux</h2>
+<h2 id="Nr4">Einrichten der IDE unter Linux (Ubuntu)</h2>
+<p>In der offiziellen <a href="http://www.monogame.net/documentation/?page=main">MonoGame-Dokumentation</a> wird die <a href="http://www.monogame.net/documentation/?page=Setting_Up_MonoGame">Installation</a> ebenfalls beschrieben, wir konnten bei uns nicht alle Pakete installieren, funktionieren tut es aber trotzdem. Im Folgenden erklären wir die dortige Anleitung, wie sie zum Zeitpunkt unseres Projektes unter MonoGame Version 3.5 abl&auml;uft.
+<h3>Installation der Pakete</h3>
+<p>Folgende Pakete werden vor der Installation von MonoGame ben&ouml;tigt:</p>
+<ul>
+	<li>monodevelop</li>
+	<li>libopenal-dev</li>
+	<li>gtk-sharp3</li>
+</ul>
+<p>Installation unter Ubuntu im Terminal (Strg + Alt + T) mit:</p>
+<p class="command">
+	sudo apt install monodevelop libopenal-dev gtk-sharp3
+</p>
+<p>Nachdem man das Kennwort eingegeben hat, best&auml;tigt man die auftretende Frage mit "y" und lässt den Computer einen Moment computen.</p>
+<h3>Installation von MonoGame</h3>
+<p>Sobald letztere Pakete installiert sind, kann MonoGame (Download <a href="http://www.monogame.net/downloads/">hier</a> - aktuelle Version auswählen -> MonoGame *.* for Linux) installiert werden. Dafür navigiert man im Terminal zur Datei (normalerweise im Downloadordner), macht diese ausführbar und führt sie dann aus.</p>
+<p class="command">
+	cd Downloads<br>
+	chmod +x monogame-sdk.run<br>
+	sudo ./monogame-sdk.run<br>
+</p>
+
 <h2 id="#Nr5">Starten des Projektes</h2>
