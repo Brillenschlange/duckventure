@@ -21,14 +21,20 @@
 <h2 id="#Nr3">Einrichtung der IDE</h2>
 <h3>Installation Visual Studio</h3>
 <p>F&uuml;r die Installation von MonoGame wird das Programm Windows Visual Studio (z.B. &quot;Community 2015&quot;) ben&ouml;tigt.</p>
-<p>&gt;&gt;&gt;<a href="https://www.visualstudio.com/de/downloads/" target="_blank">Hier downloaden </a>&lt;&lt;&lt;</p>
-<p>Hier folgt man den Installationsanweisungen.</p>
+<p>&gt;&gt;&gt;<a href="https://www.visualstudio.com/de/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
+<p>Anschließend folgt man den nachstehenden Installationsanweisungen:</p>
+<p>- Öffnen der .exe (findbar beim Explorer unter &quot;Downloads&quot; -&lt; &quot;Downloads durchsuchen&quot; (oben rechts) -&lt;Eingabe von &quot;vs_community_DEU&quot; -&lt; Doppelklick auf die .exe)</p>
+<p>- Ausführen der .exe </p>
+<p>- Ausführen der .exe auf dem lokalen Endgerät</p>
+<p>- Auswahl des Installationsortes (Empfehlung: vorgegebenden Installationsort beibehalten) und Wahl der Installationsart. Für die Installation von MonoGame bietet sich die Installationsart &quot;Standard&quot; an. Bestätigen und starten der Installation mit Klick auf &quot;Installieren&quot;. Die Installation kann bis zu 45 Minuten dauern.</p>
+<p></p>
+
 <p><i>Was ist Windows Visual Studio?</i></p>
 <p>"Windows Visual Studio" ist eine von dem Unternehmen Microsoft erstellte Entwicklungsumgebung ..... (weiterführen).</p>
 
 		
 <h3>Installation MonoGame</h3>
 <p>Zudem braucht man MonoGame for Visual Studio. </p> 
-<p>&gt;&gt;&gt;<a href="http://www.monogame.net/downloads/" target="_blank">Link</a>&lt;&lt;&lt;</p>
+<p>&gt;&gt;&gt;<a href="http://www.monogame.net/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
 		
 <h2 id="#Nr4">Starten des Projektes</h2>
