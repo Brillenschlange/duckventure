@@ -12,21 +12,21 @@
 
 
 <h2 id="#Nr1">Einleitung</h2>
-<p>Dieses Tutorial bezieht sich auf die Erstellung eines 2D Jump'n'Runs. F&uuml;r die Erstellung wird das Framework MonoGame in C&#35; verwendet. In diesem Tutorial geht es um die Installation von MonoGame in dem Betriebssystem Windows.</p>
+<p>Dieses Tutorial bezieht sich auf die Erstellung eines 2D Jump'n'Runs. F&uuml;r die Erstellung wird das Framework MonoGame in C&#35; verwendet. In diesem Tutorial geht es um die Installation von MonoGame unter dem Betriebssystem Windows.</p>
 
 <h2 id="#Nr2">Idee und Konzept</h2>
 <p>"The Duckventure" ist ein 2D Jump'n'Run, welches innerhalb des Informatikunterrichts entstanden ist. Zu diesem Zeitpunkt ist das Projekt noch in seinen Grundzügen, aber die Ersteller von dem Projekt sind drauf und dran es fertigzustellen.</p>
-<p>Das Spiel wird sich in späteren Zügen per Tastatur (WASD) bedienen lassen. Das Konzept beläuft sich darauf, dass eine kleine Ente (eng: Duck) durch die Welt läuft/hüpft und auf Grundlage einer spannenden Geschichte viele Abenteuer erlebt und bewältigt. Der genaue Verlauf dieser Geschichte steht noch nicht entgültig fest.</p>
+<p>Das Spiel wird sich in späteren Zügen per Tastatur (WASD) bedienen lassen. Das Konzept beläuft sich darauf, dass eine kleine Ente (eng: duck) durch die Welt läuft/hüpft und auf Grundlage einer spannenden Geschichte viele Abenteuer erlebt und bewältigt. Der genaue Verlauf dieser Geschichte steht noch nicht entgültig fest.</p>
 
 <h2 id="#Nr3">Einrichtung der IDE</h2>
 <h3>Installation Visual Studio</h3>
 <p>F&uuml;r die Installation von MonoGame wird das Programm Windows Visual Studio (z.B. &quot;Community 2015&quot;) ben&ouml;tigt.</p>
 <p>&gt;&gt;&gt;<a href="https://www.visualstudio.com/de/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
 <p>Anschließend folgt man den nachstehenden Installationsanweisungen:</p>
-<p>- Öffnen der .exe (findbar beim Explorer unter &quot;Downloads&quot; -&lt; &quot;Downloads durchsuchen&quot; (oben rechts) -&lt;Eingabe von &quot;vs_community_DEU&quot; -&lt; Doppelklick auf die .exe)</p>
-<p>- Ausführen der .exe </p>
-<p>- Ausführen der .exe auf dem lokalen Endgerät</p>
-<p>- Auswahl des Installationsortes (Empfehlung: vorgegebenden Installationsort beibehalten) und Wahl der Installationsart. Für die Installation von MonoGame bietet sich die Installationsart &quot;Standard&quot; an. Bestätigen und starten der Installation mit Klick auf &quot;Installieren&quot;. Die Installation kann bis zu 45 Minuten dauern.</p>
+<p>- Öffnen der .exe (findbar beim Explorer unter &quot;Downloads&quot; &rarr; &quot;Downloads durchsuchen&quot; (oben rechts) &rarr; Eingabe von &quot;vs_community_DEU&quot; &rarr; Doppelklick auf die .exe)</p>
+<p>- Ausführen der .exe (C:\Users\User\Downloads\vs_community_DEU_969443474.1486759425.exe)</p>
+<p>- Ausführen der .exe auf dem lokalen Endgerät (C:\Users\User\AppData\Local\Temp\{30189239-...)</p>
+<p>- Auswahl des Installationsortes (Empfehlung: vorgegebenden Installationsort beibehalten) und Wahl der Installationsart. Für die Installation von MonoGame bietet sich die Installationsart &quot;Standard&quot; an. Bestätigen und starten der Installation mit Klick auf &quot;Installieren&quot;. Die Installation kann bis zu 60 Minuten dauern.</p>
 <p></p>
 
 <p><i>Was ist Windows Visual Studio?</i></p>
