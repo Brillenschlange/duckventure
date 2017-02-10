@@ -3,11 +3,13 @@
 <ol>
 	<li><a href="#Nr1">Einleitung</a></li>
 	<li><a href="#Nr2">Idee und Konzept</a></li>
-	<li><a href="#Nr3">Einrichtung der IDE</a></li>
+	<li><a href="#Nr3">Einrichtung der IDE unter Windows</a></li>
 		<ol>
-			<li>Installation Visual Studio</li>
-			<li>Installation MonoGame</li></ol>
-	<li><a href="#Nr4">Starten des Projektes</a></li>
+			<li><a href="#Nr3.1">Installation Visual Studio</a></li>
+			<li><a href="#Nr3.2">Installation MonoGame</a></li>
+		</ol>
+	<li><a href="#Nr4">Einrichten der IDE unter Linux</a></li>
+	<li><a href="#Nr5">Starten des Projektes</a></li>
 </ol>
 
 
@@ -18,7 +20,7 @@
 <p>"The Duckventure" ist ein 2D Jump'n'Run, welches innerhalb des Informatikunterrichts entstanden ist. Zu diesem Zeitpunkt ist das Projekt noch in seinen Grundzügen, aber die Ersteller von dem Projekt sind drauf und dran es fertigzustellen.</p>
 <p>Das Spiel wird sich in späteren Zügen per Tastatur (WASD) bedienen lassen. Das Konzept beläuft sich darauf, dass eine kleine Ente (eng: duck) durch die Welt läuft/hüpft und auf Grundlage einer spannenden Geschichte viele Abenteuer erlebt und bewältigt. Der genaue Verlauf dieser Geschichte steht noch nicht entgültig fest.</p>
 
-<h2 id="#Nr3">Einrichtung der IDE</h2>
+<h2 id="#Nr3">Einrichtung der IDE unter Windows</h2>
 <h3>Installation Visual Studio</h3>
 <p>F&uuml;r die Installation von MonoGame wird das Programm Windows Visual Studio (z.B. &quot;Community 2015&quot;) ben&ouml;tigt.</p>
 <p>&gt;&gt;&gt;<a href="https://www.visualstudio.com/de/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
@@ -36,5 +38,6 @@
 <h3>Installation MonoGame</h3>
 <p>Zudem braucht man MonoGame for Visual Studio. </p> 
 <p>&gt;&gt;&gt;<a href="http://www.monogame.net/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
-		
-<h2 id="#Nr4">Starten des Projektes</h2>
+
+<h2 id="Nr4">Einrichten der IDE unter Linux</h2>
+<h2 id="#Nr5">Starten des Projektes</h2>
