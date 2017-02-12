@@ -77,7 +77,7 @@
 	chmod +x monogame-sdk.run<br>
 	sudo ./monogame-sdk.run<br>
 </p>
-<p>F&uuml; den sudo-Befehl erneut das Passwort eingeben, die folgenden beiden Frage wieder mit "Y" beantworten und MonoGame wird installiert.</p>
+<p>F&uuml;r den sudo-Befehl erneut das Passwort eingeben, die folgenden beiden Frage wieder mit "Y" beantworten und MonoGame wird installiert.</p>
 <p><img src="images/idelinux/menu.png"></p>
 <p>Nun ist die IDE Monodevelop mit installierten MonoGame-Addin im Startmen&uuml; zu finden.</p>
 
