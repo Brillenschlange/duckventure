@@ -71,11 +71,14 @@
 <p><img src="images/idelinux/done.png"></p>
 <p>So sollte die Ausgabe aussehen, wenn die Installation erfolgreich verlaufen ist.</p>
 <h3>Installation von MonoGame</h3>
-<p>Sobald letztere Pakete installiert sind, kann MonoGame (Download <a href="http://www.monogame.net/downloads/" target="_blank">hier</a> - aktuelle Version auswählen -> MonoGame *.* for Linux) installiert werden. Dafür navigiert man im Terminal zur Datei (normalerweise im Downloadordner), macht diese ausführbar und führt sie dann aus.</p>
+<p>Sobald letztere Pakete installiert sind, kann MonoGame (Download <a href="http://www.monogame.net/downloads/" target="_blank">hier</a> - aktuelle Version auswählen -> MonoGame *.* for Linux) installiert werden. Dafür navigiert man im Terminal zur Datei (normalerweise im Downloadordner), macht diese ausführbar und führt sie dann aus. Folgende Befehle (Jede Zeile ein Befehl) sind daf&uuml;r einzugeben:</p>
 <p class="command">
 	cd Downloads<br>
 	chmod +x monogame-sdk.run<br>
 	sudo ./monogame-sdk.run<br>
 </p>
+<p>F&uuml; den sudo-Befehl erneut das Passwort eingeben, die folgenden beiden Frage wieder mit "Y" beantworten und MonoGame wird installiert.</p>
+<p><img src="images/idelinux/menu.png"></p>
+<p>Nun ist die IDE Monodevelop mit installierten MonoGame-Addin im Startmen&uuml; zu finden.</p>
 
 <h2 id="#Nr5">Starten des Projektes</h2>
