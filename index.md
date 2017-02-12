@@ -39,9 +39,9 @@
 <p><i>Was ist Windows Visual Studio?</i></p>
 <p>"Windows Visual Studio" ist eine von dem Unternehmen Microsoft erstellte Entwicklungsumgebung ..... (weiterführen).</p>
 
-		
+
 <h3>Installation MonoGame</h3>
-<p>Das Framework MonoGame muss anschließend gedownloadet und installiert werden.</p> 
+<p>Das Framework MonoGame muss anschließend gedownloadet und installiert werden.</p>
 <p>&gt;&gt;&gt;<a href="http://www.monogame.net/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
 <p>Das Öffnen und Auführen der .exe führt zu dem Installationsverlauf. Hierbei sollte man die nachstehenden Installationsanweisungen beachten:</p>
 <p>Bevor man bei dem ersten Installationsfenster auf &quot;Next&quot; klickt, sollte man alle anderen Anwendungen schließen, damit keine Komplikationen zwischen Updates und geöffneten Anwendungen entstehen können. Nach dem Schlie&szlig;en der anderen Anwendung kann man auf &quot;Next&quot; klicken und den Installationsvorgang fortsetzen.</p>
@@ -66,7 +66,10 @@
 <p class="command">
 	sudo apt install monodevelop libopenal-dev gtk-sharp3
 </p>
+<p><img src="images/idelinux/password.png"></p>
 <p>Nachdem man das Kennwort eingegeben hat, best&auml;tigt man die auftretende Frage mit "y" und lässt den Computer einen Moment computen.</p>
+<p><img src="images/idelinux/done.png"></p>
+<p>So sollte die Ausgabe aussehen, wenn die Installation erfolgreich verlaufen ist.</p>
 <h3>Installation von MonoGame</h3>
 <p>Sobald letztere Pakete installiert sind, kann MonoGame (Download <a href="http://www.monogame.net/downloads/" target="_blank">hier</a> - aktuelle Version auswählen -> MonoGame *.* for Linux) installiert werden. Dafür navigiert man im Terminal zur Datei (normalerweise im Downloadordner), macht diese ausführbar und führt sie dann aus.</p>
 <p class="command">
