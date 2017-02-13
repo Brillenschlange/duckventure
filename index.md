@@ -21,14 +21,14 @@
 </ol>
 
 
-<h2 id="#Nr1">Einleitung</h2>
+<h2 id="Nr1">Einleitung</h2>
 <p>Dieses Tutorial bezieht sich auf die Erstellung eines 2D Jump'n'Runs. F&uuml;r die Erstellung wird das Framework MonoGame in C&#35; verwendet. In diesem Tutorial geht es um die Installation von MonoGame unter dem Betriebssystem Windows.</p>
 
-<h2 id="#Nr2">Idee und Konzept</h2>
+<h2 id="Nr2">Idee und Konzept</h2>
 <p>"The Duckventure" ist ein 2D Jump'n'Run, welches innerhalb des Informatikunterrichts entstanden ist. Zu diesem Zeitpunkt ist das Projekt noch in seinen Grundzügen, aber die Ersteller von dem Projekt sind drauf und dran es fertigzustellen.</p>
 <p>Das Spiel wird sich in späteren Zügen per Tastatur (WASD) bedienen lassen. Das Konzept beläuft sich darauf, dass eine kleine Ente (eng: duck) durch die Welt läuft/hüpft und auf Grundlage einer spannenden Geschichte viele Abenteuer erlebt und bewältigt. Der genaue Verlauf dieser Geschichte steht noch nicht entgültig fest.</p>
 
-<h2 id="#Nr3">Einrichtung der IDE unter Windows</h2>
+<h2 id="Nr3">Einrichtung der IDE unter Windows</h2>
 <h3>Installation Visual Studio</h3>
 <p>F&uuml;r die Installation von MonoGame wird das Programm Windows Visual Studio (z.B. &quot;Community 2015&quot;) ben&ouml;tigt.</p>
 <p>&gt;&gt;&gt;<a href="https://www.visualstudio.com/de/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
@@ -77,7 +77,7 @@
 <p><img src="images/idelinux/done.png"></p>
 <p>So sollte die Ausgabe aussehen, wenn die Installation erfolgreich verlaufen ist.</p>
 
-<h3 id="#Nr4.2">Installation von MonoGame</h3>
+<h3 id="Nr4.2">Installation von MonoGame</h3>
 <p>Sobald letztere Pakete installiert sind, kann MonoGame (Download <a href="http://www.monogame.net/downloads/" target="_blank">hier</a> - aktuelle Version auswählen -> MonoGame *.* for Linux) installiert werden. Dafür navigiert man im Terminal zur Datei (normalerweise im Downloadordner), macht diese ausführbar und führt sie dann aus. Folgende Befehle (Jede Zeile ein Befehl) sind daf&uuml;r einzugeben:</p>
 <p class="command">
 	cd Downloads<br>
@@ -88,10 +88,10 @@
 <p><img src="images/idelinux/menu.png"></p>
 <p>Nun ist die IDE Monodevelop mit installierten MonoGame-Addin im Startmen&uuml; zu finden.</p>
 
-<h2 id="#Nr5">Starten des Projektes</h2>
+<h2 id="Nr5">Starten des Projektes</h2>
 <p> Das Starten von einem MonoGame-Projekt ist von Betriebssystem zu Betriebssystem anders. Im Folgenden lassen sich die Tutorials für Windows und Linux finden.</p>
 
-<h3 id="#Nr5.1">Starten unter Windows</h3>
+<h3 id="Nr5.1">Starten unter Windows</h3>
 <p>Starten von Windows Visual Studio. Das Programm ist unter der Liste nach dem Klick auf das Windows-Logo (unten Links) zu finden.</p>
 <p>Beim ersten Starten von Windows Visual Studio ist eine Anmeldung mit einem Microsoft-Account nötig, außer man möchte das Programm nur im Testzeitraum von 30 Tagen benutzen. Die Anmeldung ist kostenlos und birgt keine späteren Kosten. Falls man bereits über einen Microsoft-Account verfügt, klickt man auf &quot;Anmelden&quot; und vollführt die Anmeldung mit dem Namen und der E-Mail-Adresse. Anderenfalls legt man sich einen Account unter &quot;Registrieren&quot; an und meldet sich anschließend an.</p>
 <p><img src="images/idewindows/10.png"></p>
@@ -100,4 +100,4 @@
 <p>Im Fenster folgt man den Reitern Installiert -> Vorlagen -> Visual C&#35; -> MonoGame und wählt &quot;MonoGame Windows Project&quot; aus. Der Projektname, Speicherort und der Projektmappenname können im unteren Teil des Fensters angepasst werden. Mit dem Klick auf &quot;Ok&quot; wird das Projekt erstellt.</p>
 <p><img src="images/idewindows/12.png"></p>
 
-<h3 id="#Nr5.2">Starten unter Linux</h3>
+<h3 id="Nr5.2">Starten unter Linux</h3>
