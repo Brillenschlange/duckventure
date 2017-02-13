@@ -29,7 +29,7 @@
 <p>Das Spiel wird sich in späteren Zügen per Tastatur (WASD) bedienen lassen. Das Konzept beläuft sich darauf, dass eine kleine Ente (eng: duck) durch die Welt läuft/hüpft und auf Grundlage einer spannenden Geschichte viele Abenteuer erlebt und bewältigt. Der genaue Verlauf dieser Geschichte steht noch nicht entgültig fest.</p>
 
 <h2 id="Nr3">Einrichtung der IDE unter Windows</h2>
-<h3>Installation Visual Studio</h3>
+<h3 id="Nr3.1">Installation Visual Studio</h3>
 <p>F&uuml;r die Installation von MonoGame wird das Programm Windows Visual Studio (z.B. &quot;Community 2015&quot;) ben&ouml;tigt.</p>
 <p>&gt;&gt;&gt;<a href="https://www.visualstudio.com/de/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
 <p>Anschließend folgt man den nachstehenden Installationsanweisungen:</p>
@@ -45,7 +45,7 @@
 <p>Nach dem erfolgreichen Neustart des Endgeräts öffnet sich die Internetseite von Windows Visual Studio und die Aussage &quot;Welcome to Visual Studio&quot; auf der Website bestätigt, dass die Installation erfolgreich verlaufen ist.</p>
 <p><img src="images/idewindows/5.png"></p>
 
-<h3>Installation MonoGame</h3>
+<h3 id="Nr3.2">Installation MonoGame</h3>
 <p>Das Framework MonoGame muss anschließend gedownloadet und installiert werden.</p>
 <p>&gt;&gt;&gt;<a href="http://www.monogame.net/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
 <p>Das Öffnen und Auführen der .exe führt zu dem Installationsverlauf. Hierbei sollte man die nachstehenden Installationsanweisungen beachten:</p>
