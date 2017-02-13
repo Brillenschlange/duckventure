@@ -9,7 +9,15 @@
 			<li><a href="#Nr3.2">Installation MonoGame</a></li>
 		</ol>
 	<li><a href="#Nr4">Einrichten der IDE unter Linux</a></li>
+		<ol>
+			<li><a href="#Nr4.1">Installation der Pakete</a></li>
+			<li><a href="#Nr4.2">Installation von MonoGame</a></li>
+		</ol>
 	<li><a href="#Nr5">Starten des Projektes</a></li>
+		<ol>
+			<li><a href="#Nr5.1">Starten unter Windows</a></li>
+			<li><a href="#Nr5.2">Starten unter Linux</a></li>
+		</ol>
 </ol>
 
 
@@ -36,9 +44,6 @@
 <p><img src="images/idewindows/4.png"></p>
 <p>Nach dem erfolgreichen Neustart des Endgeräts öffnet sich die Internetseite von Windows Visual Studio und die Aussage &quot;Welcome to Visual Studio&quot; auf der Website bestätigt, dass die Installation erfolgreich verlaufen ist.</p>
 <p><img src="images/idewindows/5.png"></p>
-<p><i>Was ist Windows Visual Studio?</i></p>
-<p>"Windows Visual Studio" ist eine von dem Unternehmen Microsoft erstellte Entwicklungsumgebung ..... (weiterführen).</p>
-
 
 <h3>Installation MonoGame</h3>
 <p>Das Framework MonoGame muss anschließend gedownloadet und installiert werden.</p>
@@ -55,7 +60,8 @@
 
 <h2 id="Nr4">Einrichten der IDE unter Linux (Ubuntu)</h2>
 <p>In der offiziellen <a href="http://www.monogame.net/documentation/?page=main" target="_blank">MonoGame-Dokumentation</a> wird die <a href="http://www.monogame.net/documentation/?page=Setting_Up_MonoGame" target="_blank">Installation</a> ebenfalls beschrieben, wir konnten bei uns nicht alle Pakete installieren, funktionieren tut es aber trotzdem. Im Folgenden erklären wir die dortige Anleitung, wie sie zum Zeitpunkt unseres Projektes unter MonoGame Version 3.5 abl&auml;uft.
-<h3>Installation der Pakete</h3>
+
+<h3 id="Nr4.1">Installation der Pakete</h3>
 <p>Folgende Pakete werden vor der Installation von MonoGame ben&ouml;tigt:</p>
 <ul>
 	<li>monodevelop</li>
@@ -70,7 +76,8 @@
 <p>Nachdem man das Kennwort eingegeben hat, best&auml;tigt man die auftretende Frage mit "y" und lässt den Computer einen Moment computen.</p>
 <p><img src="images/idelinux/done.png"></p>
 <p>So sollte die Ausgabe aussehen, wenn die Installation erfolgreich verlaufen ist.</p>
-<h3>Installation von MonoGame</h3>
+
+<h3 id="#Nr4.2">Installation von MonoGame</h3>
 <p>Sobald letztere Pakete installiert sind, kann MonoGame (Download <a href="http://www.monogame.net/downloads/" target="_blank">hier</a> - aktuelle Version auswählen -> MonoGame *.* for Linux) installiert werden. Dafür navigiert man im Terminal zur Datei (normalerweise im Downloadordner), macht diese ausführbar und führt sie dann aus. Folgende Befehle (Jede Zeile ein Befehl) sind daf&uuml;r einzugeben:</p>
 <p class="command">
 	cd Downloads<br>
@@ -82,3 +89,15 @@
 <p>Nun ist die IDE Monodevelop mit installierten MonoGame-Addin im Startmen&uuml; zu finden.</p>
 
 <h2 id="#Nr5">Starten des Projektes</h2>
+<p> Das Starten von einem MonoGame-Projekt ist von Betriebssystem zu Betriebssystem anders. Im Folgenden lassen sich die Tutorials für Windows und Linux finden.</p>
+
+<h3 id="#Nr5.1">Starten unter Windows</h3>
+<p>Starten von Windows Visual Studio. Das Programm ist unter der Liste nach dem Klick auf das Windows-Logo (unten Links) zu finden.</p>
+<p>Beim ersten Starten von Windows Visual Studio ist eine Anmeldung mit einem Microsoft-Account nötig, außer man möchte das Programm nur im Testzeitraum von 30 Tagen benutzen. Die Anmeldung ist kostenlos und birgt keine späteren Kosten. Falls man bereits über einen Microsoft-Account verfügt, klickt man auf &quot;Anmelden&quot; und vollführt die Anmeldung mit dem Namen und der E-Mail-Adresse. Anderenfalls legt man sich einen Account unter &quot;Registrieren&quot; an und meldet sich anschließend an.</p>
+<p><img src="images/idewindows/10.png"></p>
+<p>Um ein neues MonoGame-Projekt anzulegen, folgt man dem Reiter Datei -> Neu -> Projekt...
+<p><img src="images/idewindows/11.png"></p>
+<p>Im Fenster folgt man den Reitern Installiert -> Vorlagen -> Visual C&#35; -> MonoGame und wählt &quot;MonoGame Windows Project&quot; aus. Der Projektname, Speicherort und der Projektmappenname können im unteren Teil des Fensters angepasst werden. Mit dem Klick auf &quot;Ok&quot; wird das Projekt erstellt.</p>
+<p><img src="images/idewindows/12.png"></p>
+
+<h3 id="#Nr5.2">Starten unter Linux</h3>
