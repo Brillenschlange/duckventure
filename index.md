@@ -27,15 +27,15 @@
 <p>Anschließend folgt man den nachstehenden Installationsanweisungen:</p>
 <p>Öffnen der .exe (findbar beim Explorer unter &quot;Downloads&quot; &rarr; &quot;Downloads durchsuchen&quot; (oben rechts) &rarr; Eingabe von &quot;vs_community_DEU&quot; &rarr; Doppelklick auf die .exe)</p>
 <p>Ausführen der .exe (C:\Users\User\Downloads\vs_community_DEU_969443474.1486759425.exe)</p>
-<p><img src="images/1.png"></p>
+<p><img src="images/idewindows/1.png"></p>
 <p>Ausführen der .exe auf dem lokalen Endgerät (C:\Users\User\AppData\Local\Temp\{30189239-...)</p>
-<p><img src="images/2.png"></p>
+<p><img src="images/idewindows/2.png"></p>
 <p>Auswahl des Installationsortes (Empfehlung: vorgegebenden Installationsort beibehalten) und Wahl der Installationsart. Für die Installation von MonoGame bietet sich die Installationsart &quot;Standard&quot; an. Bestätigen und starten der Installation mit Klick auf &quot;Installieren&quot;. Zu beachten ist, dass die Installation von Winows Visual Studio bis zu 8 GB auf den Laufwerken benötigen kann. Die Installationsdauer kann bis zu 80 Minuten dauern.</p>
-<p><img src="images/3.png"></p>
+<p><img src="images/idewindows/3.png"></p>
 <p>Nach dem Abschluss der Installation erscheint ein Fenster mit &quot;Setup abgeschlossen!&quot;. Das Programm Windows Visual Studio ist somit auf dem Endgerät installiert. Es kann nach dem Neustart des Endgerät gestartet und verwendet werden. Mit dem Klick auf &quot;Jetzt neu starten&quot; wird das Endgerät neu gestartet und das Produkt gestartet.</p>
-<p><img src="images/4.png"></p>
+<p><img src="images/idewindows/4.png"></p>
 <p>Nach dem erfolgreichen Neustart des Endgeräts öffnet sich die Internetseite von Windows Visual Studio und die Aussage &quot;Welcome to Visual Studio&quot; auf der Website bestätigt, dass die Installation erfolgreich verlaufen ist.</p>
-<p><img src="images/5.png"></p>
+<p><img src="images/idewindows/5.png"></p>
 <p><i>Was ist Windows Visual Studio?</i></p>
 <p>"Windows Visual Studio" ist eine von dem Unternehmen Microsoft erstellte Entwicklungsumgebung ..... (weiterführen).</p>
 
@@ -45,13 +45,13 @@
 <p>&gt;&gt;&gt;<a href="http://www.monogame.net/downloads/" target="_blank">Hier downloaden</a>&lt;&lt;&lt;</p>
 <p>Das Öffnen und Auführen der .exe führt zu dem Installationsverlauf. Hierbei sollte man die nachstehenden Installationsanweisungen beachten:</p>
 <p>Bevor man bei dem ersten Installationsfenster auf &quot;Next&quot; klickt, sollte man alle anderen Anwendungen schließen, damit keine Komplikationen zwischen Updates und geöffneten Anwendungen entstehen können. Nach dem Schlie&szlig;en der anderen Anwendung kann man auf &quot;Next&quot; klicken und den Installationsvorgang fortsetzen.</p>
-<p><img src="images/6.png"></p>
+<p><img src="images/idewindows/6.png"></p>
 <p>Das Akzeptieren der Lizentvereinbarungen ist die Vorraussetzung zum Starten der Installation. Durch den Klick auf &quot;I Agree&quot; werden die Lizenzvereinbarungen akzeptiert.</p>
-<p><img src="images/7.png"></p>
+<p><img src="images/idewindows/7.png"></p>
 <p>Im n&aulm;chsten Schritt wählt man die Komponenten der Installation aus. Im optimalen Fall sind alle möglichen Installationskomponenten ausgew&aulm;hlt. Ist dies nicht der Fall sollte man alle möglichen Komponenten mit einem Hacken versehen. Die benötigte Speicherkapazit&aulm;t auf dem Endgerät wird unten links im Fenster angezeigt. Mit dem Klick auf Install startet die Installation. Die Dauer der Installation kann bis zu 5 Minuten beanspruchen.</p>
-<p><img src="images/8.png"></p>
+<p><img src="images/idewindows/8.png"></p>
 <p>Die Installation von MonoGame ist abgeschlossen. Mit einem Klick auf &quot;Finish&quot; schlie&szlig;t sich das Fenster.</p>
-<p><img src="images/9.png"></p>
+<p><img src="images/idewindows/9.png"></p>
 
 <h2 id="Nr4">Einrichten der IDE unter Linux (Ubuntu)</h2>
 <p>In der offiziellen <a href="http://www.monogame.net/documentation/?page=main" target="_blank">MonoGame-Dokumentation</a> wird die <a href="http://www.monogame.net/documentation/?page=Setting_Up_MonoGame" target="_blank">Installation</a> ebenfalls beschrieben, wir konnten bei uns nicht alle Pakete installieren, funktionieren tut es aber trotzdem. Im Folgenden erklären wir die dortige Anleitung, wie sie zum Zeitpunkt unseres Projektes unter MonoGame Version 3.5 abl&auml;uft.
