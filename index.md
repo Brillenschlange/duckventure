@@ -13,10 +13,10 @@
 			<li><a href="#Nr4.1">Installation der Pakete</a></li>
 			<li><a href="#Nr4.2">Installation von MonoGame</a></li>
 		</ol>
-	<li><a href="#Nr5">Starten des Projektes</a></li>
+	<li><a href="#Nr5">Anlegen eines Projektes</a></li>
 		<ol>
-			<li><a href="#Nr5.1">Starten unter Windows</a></li>
-			<li><a href="#Nr5.2">Starten unter Linux</a></li>
+			<li><a href="#Nr5.1">Anlegen in Visual Studio</a></li>
+			<li><a href="#Nr5.2">Anlegen in MonoDevelop</a></li>
 		</ol>
 </ol>
 
