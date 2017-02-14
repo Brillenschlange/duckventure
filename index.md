@@ -102,3 +102,8 @@
 
 <h3 id="Nr5.2">Anlegen in MonoDevelop</h3>
 <p>Unter Linux mit Monodevelop lässt sich ein Projekt relativ &auml;hnlich erstellen. Zuerst sucht man im Startmen&uuml; nach MonoGame und f&uuml;hrt es aus. Dann wird man von folgendem Interface begr&uuml;ßt:</p>
+<p><img src="images/idelinux/interface.png"></p>
+<p>Hier kann man unter "Solutions" auf "New..." ein neues Projekt erstellen.</p>
+<p><img src="images/idelinux/newsolution.png"></p>
+<p>Im n&aauml;chsten Fenster wählt man links unter "MonoGame" - "App" ein "MonoGame Cross Platform Desktop Project". Best&auml;tigen mit "Next":</p>
+
