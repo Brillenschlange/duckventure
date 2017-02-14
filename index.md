@@ -86,7 +86,7 @@
 </p>
 <p>F&uuml;r den sudo-Befehl erneut das Passwort eingeben, die folgenden beiden Frage wieder mit "Y" beantworten und MonoGame wird installiert.</p>
 <p><img src="images/idelinux/menu.png"></p>
-<p>Nun ist die IDE Monodevelop mit installierten MonoGame-Addin im Startmen&uuml; zu finden.</p>
+<p>Nun ist die IDE MonoDevelop mit installierten MonoGame-Addin im Startmen&uuml; zu finden.</p>
 
 <h2 id="Nr5">Anlegen eines Projektes</h2>
 <p> Das Starten von einem MonoGame-Projekt ist von Betriebssystem zu Betriebssystem anders. Im Folgenden lassen sich die Tutorials für Windows und Linux finden.</p>
@@ -101,4 +101,4 @@
 <p><img src="images/idewindows/12.png"></p>
 
 <h3 id="Nr5.2">Anlegen in MonoDevelop</h3>
-<p></p>
+<p>Unter Linux mit Monodevelop lässt sich ein Projekt relativ &auml;hnlich erstellen. Zuerst sucht man im Startmen&uuml; nach MonoGame und f&uuml;hrt es aus. Dann wird man von folgendem Interface begr&uuml;ßt:</p>
