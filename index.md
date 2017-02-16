@@ -105,5 +105,7 @@
 <p><img src="images/idelinux/interface.png"></p>
 <p>Hier kann man unter &quot;<i>Solutions</i>&quot; auf &quot;<i>New...</i>&quot; ein neues Projekt erstellen.</p>
 <p><img src="images/idelinux/newsolution.png"></p>
-<p>Im n&auml;chsten Fenster wählt man links unter &quot;<i>MonoGame</i>&quot; - &quot;<i>App</i>&quot; ein &quot;<i>MonoGame Cross Platform Desktop Project</i>&quot;. Best&auml;tigen mit &quot;<i>Next</i>&quot;:</p>
+<p>Im n&auml;chsten Fenster wählt man links unter &quot;<i>MonoGame</i>&quot; - &quot;<i>App</i>&quot; ein &quot;<i>MonoGame Cross Platform Desktop Project</i>&quot;. Best&auml;tigen mit &quot;<i>Next</i>&quot;.</p>
+<p><img src="images/idelinux/configure.png"></p>
+<p>In diesem Fenster kann das Projekt benannt werden. Hierzu den gewünschten Projektnamen eingeben und den Speicherort (&quot;Location&quot;) auswählen. Mit &quot;Create&quot; (unten rechts) den Projektnamen bestätigen und das Projekt erstellen.
 
