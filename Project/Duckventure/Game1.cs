@@ -15,9 +15,15 @@ namespace Duckventure
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 
+		Texture2D wurmi;
+
 		public Game1 ()
 		{
 			graphics = new GraphicsDeviceManager (this);
+
+			graphics.PreferredBackBufferWidth = 960;
+			graphics.PreferredBackBufferHeight = 720;
+
 			Content.RootDirectory = "Content";
 		}
 
@@ -30,7 +36,7 @@ namespace Duckventure
 		protected override void Initialize ()
 		{
 			// TODO: Add your initialization logic here
-            
+
 			base.Initialize ();
 		}
 
@@ -44,7 +50,9 @@ namespace Duckventure
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 
 			//TODO: use this.Content to load your game content here 
-		}
+			//wurmi = Content.Load<Texture2D>("Textures/wurmi");
+
+			}
 
 		/// <summary>
 		/// Allows the game to run logic such as updating the world,
@@ -63,6 +71,7 @@ namespace Duckventure
 			// TODO: Add your update logic here
             
 			base.Update (gameTime);
+
 		}
 
 		/// <summary>
@@ -71,7 +80,7 @@ namespace Duckventure
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw (GameTime gameTime)
 		{
-			graphics.GraphicsDevice.Clear (Color.CornflowerBlue);
+			graphics.GraphicsDevice.Clear (Color.Brown);
             
 			//TODO: Add your drawing code here
             

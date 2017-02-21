@@ -8,3 +8,4 @@
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/MonoGame.Framework.dll
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/OpenTK.dll
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/NVorbis.dll
+/home/fabian/Git/duckventure/Project/Duckventure/obj/x86/Debug/Duckventure.Content.Textures.wurmi.png
