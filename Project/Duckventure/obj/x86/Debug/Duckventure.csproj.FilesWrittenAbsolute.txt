@@ -1,0 +1,10 @@
+/home/fabian/Git/duckventure/Project/Duckventure/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/fabian/Git/duckventure/Project/Duckventure/obj/x86/Debug/Duckventure.Icon.ico
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/OpenTK.dll.config
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Duckventure.exe.mdb
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Duckventure.exe
+/home/fabian/Git/duckventure/Project/Duckventure/obj/x86/Debug/Duckventure.exe
+/home/fabian/Git/duckventure/Project/Duckventure/obj/x86/Debug/Duckventure.exe.mdb
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/MonoGame.Framework.dll
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/OpenTK.dll
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/NVorbis.dll
