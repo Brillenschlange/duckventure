@@ -46,4 +46,4 @@ Währenddessen arbeiteten wir an unserem Projet weiter, wobi uns das Video auf Y
 <p><h3>Donnerstag, 16.02.2017</h3></p>
 
 Wir machten weitere Vortschritte bei unserem Projekt, indem wir Gravitation für alle Objekte im Bezugssystem einfügten. Dies Dokumentierten wir ebenfalls auf GitHub.
-Am Ende der Stunde schauten und testeten wir  die Projekte der anderen Gruppen an
+Am Ende der Stunde schauten und testeten wir  die Projekte der anderen Gruppen an.
