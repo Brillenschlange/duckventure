@@ -17,6 +17,12 @@ namespace Duckventure
 
 		Texture2D wurmi;
 
+		Vector2 wurmiDimensions = new Vector2(60, 100);
+		Vector2 wurmiPosition = new Vector2(100, 100);
+		Vector2 wurmiVelocity = new Vector2();
+
+
+
 		public Game1 ()
 		{
 			graphics = new GraphicsDeviceManager (this);
@@ -25,6 +31,8 @@ namespace Duckventure
 			graphics.PreferredBackBufferHeight = 720;
 
 			Content.RootDirectory = "Content";
+
+			IsMouseVisible = true;
 		}
 
 		/// <summary>
@@ -50,7 +58,7 @@ namespace Duckventure
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 
 			//TODO: use this.Content to load your game content here 
-			//wurmi = Content.Load<Texture2D>("Textures/wurmi");
+			wurmi = Content.Load<Texture2D>("Textures/wurmi");
 
 			}
 
@@ -70,6 +78,11 @@ namespace Duckventure
             
 			// TODO: Add your update logic here
             
+			wurmiVelocity += new Vector2(0f, 10f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+
+			wurmiPosition += (10 * wurmiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+
+
 			base.Update (gameTime);
 
 		}
@@ -83,7 +96,21 @@ namespace Duckventure
 			graphics.GraphicsDevice.Clear (Color.Brown);
             
 			//TODO: Add your drawing code here
-            
+
+			Vector2 wurmiCenter = wurmiDimensions / 2;
+
+
+			spriteBatch.Begin();
+			spriteBatch.Draw(wurmi, new Rectangle(
+				(int)(wurmiPosition.X - wurmiCenter.X),
+				(int)(wurmiPosition.Y - wurmiCenter.Y),
+				(int)(wurmiDimensions.X),
+				(int)(wurmiDimensions.Y)
+			), 
+				Color.White);
+			spriteBatch.End();
+
+
 			base.Draw (gameTime);
 		}
 	}

@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="Duckventure.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Game1.cs">
     <Files>
-      <File FileName="DuckventureGame.cs" Line="16" Column="27" />
+      <File FileName="Game1.cs" Line="76" Column="13" />
       <File FileName="Program.cs" Line="12" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
