@@ -4,7 +4,7 @@
 
 Ideenfindung und generelle Konzeptentwicklung für das neue Projekt.
 
-<p><h3>Montag, 12.12.20116</h3></p>
+<p><h3>Montag, 12.12.2016</h3></p>
 
 Wir haben uns in die Entwicklungsprogramme Greenfoot und MonoGame eingearbeitet. 
 MonoGame konnten wir uns mithilfe des Videos "MoonTaxi" auf YouTube ansehen.  
