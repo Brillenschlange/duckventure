@@ -39,7 +39,7 @@ Für den Tag machten wir uns an die Dokumentation in GitHub-Pages.
 Wir schrieben die Fortschritte auf, die wir beim Codieren in MonoGame gemacht hatten.
 Codiert haben wir das Einfügen von Bewegungen eines Objektes. 
 
-<p><h3>Dienstag, 14.04.2017</h3></p>
+<p><h3>Dienstag, 14.02.2017</h3></p>
 
 Die Stunde nutzten wir, um die Dokumentation für die Codierung in MonoGame zu verbessern.
 Währenddessen arbeiteten wir an unserem Projet weiter, wobei uns das Video auf YouTube als Stütze diente.
