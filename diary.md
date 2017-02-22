@@ -7,7 +7,8 @@ Ideenfindung und generelle Konzeptentwicklung für das neue Projekt.
 <p><h3>Montag, 12.12.20116</h3></p>
 
 Wir haben uns in die Entwicklungsprogramme Greenfoot und MonoGame eingearbeitet. 
-MonoGame konnten wir uns mithilfe des Videos "MoonTaxi" auf YouTube ansehen (Link: https://www.youtube.com/watch?v=1VWGGs6axYc&t=778s&list=PLFOBQ8ri3LGwPnbKuZuPxbTZgB5dGPxkB&index=1). 
+MonoGame konnten wir uns mithilfe des Videos "MoonTaxi" auf YouTube ansehen. 
+(Link zum Video: https://www.youtube.com/watch?v=1VWGGs6axYc&t=778s&list=PLFOBQ8ri3LGwPnbKuZuPxbTZgB5dGPxkB&index=1) 
 Somit konnten wir die beiden Programme vergleichen. Die Entscheidung fiel schließlich auf MonoGame.
 
 <p><h3>Montag, 16.01.2017</h3></p>
