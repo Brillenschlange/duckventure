@@ -71,16 +71,43 @@ namespace Duckventure
 		{
 			// For Mobile devices, this logic will close the Game when the Back button is pressed
 			// Exit() is obsolete on iOS
-			#if !__IOS__ &&  !__TVOS__
-			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState ().IsKeyDown (Keys.Escape))
-				Exit ();
-			#endif
-            
-			// TODO: Add your update logic here
-            
-			wurmiVelocity += new Vector2(0f, 10f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			
+			//if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState ().IsKeyDown (Keys.Escape))
+			//	Exit ();
+			KeyboardState kState = Keyboard.GetState();
+
+			if (kState.IsKeyDown (Keys.W))
+				wurmiVelocity.Y = -60;
+			if (kState.IsKeyDown (Keys.A))
+				wurmiVelocity += new Vector2(-200f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+			if (kState.IsKeyDown (Keys.S))
+				wurmiVelocity += new Vector2(0f, 50f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+			if (kState.IsKeyDown (Keys.D))
+				wurmiVelocity += new Vector2(200f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+
+
+			//Gravity:
+			if (wurmiPosition.Y <= 650)
+			wurmiVelocity += new Vector2(0f, 110f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+
 
 			wurmiPosition += (10 * wurmiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+
+
+
+
+
+
+			if (wurmiPosition.Y >= 650)
+			//{
+				wurmiVelocity.Y = 0;
+			//	if (wurmiVelocity.X > 0)
+			//		wurmiVelocity += new Vector2(0f, -10f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			//	if (wurmiVelocity.X < 0)
+			//		wurmiVelocity += new Vector2(0f, +10f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+				
+			//}
 
 
 			base.Update (gameTime);
