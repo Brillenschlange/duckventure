@@ -79,11 +79,11 @@ namespace Duckventure
 			if (kState.IsKeyDown (Keys.W))
 				wurmiVelocity.Y = -60;
 			if (kState.IsKeyDown (Keys.A))
-				wurmiVelocity += new Vector2(-200f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				wurmiVelocity += new Vector2(-800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 			if (kState.IsKeyDown (Keys.S))
 				wurmiVelocity += new Vector2(0f, 50f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 			if (kState.IsKeyDown (Keys.D))
-				wurmiVelocity += new Vector2(200f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				wurmiVelocity += new Vector2(800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
 
 
@@ -94,10 +94,30 @@ namespace Duckventure
 
 			wurmiPosition += (10 * wurmiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
 
+			//Träg-idy
+			if (wurmiVelocity.X > 0) 
+			{
+				if (wurmiVelocity.X > 10f)
+				{
+				wurmiVelocity += new Vector2 (-80f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				}
+				else 
+					wurmiVelocity.X = 0;
+			}
+			if (wurmiVelocity.X < 0) 
+			{
+				if (wurmiVelocity.X < -10f) {
+					wurmiVelocity += new Vector2 (80f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				} else
+					wurmiVelocity.X = 0;
+			}
 
-
-
-
+			//Maximum Velocity X
+			if (wurmiVelocity.X > 40f)
+				wurmiVelocity.X = 40f;
+			if (wurmiVelocity.X < -40f)
+				wurmiVelocity.X = -40f;
+			
 
 			if (wurmiPosition.Y >= 650)
 			//{
