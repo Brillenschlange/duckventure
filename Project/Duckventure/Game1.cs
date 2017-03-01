@@ -15,12 +15,13 @@ namespace Duckventure
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 
-		Texture2D wurmi;
+		Texture2D enti;
 
-		Vector2 wurmiDimensions = new Vector2(60, 100);
-		Vector2 wurmiPosition = new Vector2(100, 100);
-		Vector2 wurmiVelocity = new Vector2();
-
+		//Vector2 entiDimensions = new Vector2(1440, 1387);
+		Vector2 entiPosition = new Vector2(100, 100);
+		Vector2 entiVelocity = new Vector2();
+		Vector2 entiScale = new Vector2(1,1);
+		SpriteEffects entiMirror = SpriteEffects.None;
 
 
 		public Game1 ()
@@ -58,7 +59,7 @@ namespace Duckventure
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 
 			//TODO: use this.Content to load your game content here 
-			wurmi = Content.Load<Texture2D>("Textures/wurmi");
+			enti = Content.Load<Texture2D>("Textures/enti");
 
 			}
 
@@ -77,57 +78,65 @@ namespace Duckventure
 			KeyboardState kState = Keyboard.GetState();
 
 			if (kState.IsKeyDown (Keys.W))
-				wurmiVelocity.Y = -60;
+				entiVelocity.Y = -60;
 			if (kState.IsKeyDown (Keys.A))
-				wurmiVelocity += new Vector2(-800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				entiVelocity += new Vector2(-800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 			if (kState.IsKeyDown (Keys.S))
-				wurmiVelocity += new Vector2(0f, 50f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				entiVelocity += new Vector2(0f, 50f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 			if (kState.IsKeyDown (Keys.D))
-				wurmiVelocity += new Vector2(800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-
+				entiVelocity += new Vector2(800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+			if (kState.IsKeyDown (Keys.Space))
+				//entiDimensions = new Vector2 (103, 99);
+				entiScale = new Vector2 (0.07f, 0.07f);
+			
 
 
 			//Gravity:
-			if (wurmiPosition.Y <= 650)
-			wurmiVelocity += new Vector2(0f, 110f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			if (entiPosition.Y <= 650)
+			entiVelocity += new Vector2(0f, 110f * (float)gameTime.ElapsedGameTime.TotalSeconds);
 
 
-			wurmiPosition += (10 * wurmiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			entiPosition += (10 * entiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
 
 			//Träg-idy
-			if (wurmiVelocity.X > 0) 
+			if (entiVelocity.X > 0) 
 			{
-				if (wurmiVelocity.X > 10f)
+				if (entiVelocity.X > 10f)
 				{
-				wurmiVelocity += new Vector2 (-80f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				entiVelocity += new Vector2 (-80f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 				}
 				else 
-					wurmiVelocity.X = 0;
+					entiVelocity.X = 0;
 			}
-			if (wurmiVelocity.X < 0) 
+			if (entiVelocity.X < 0) 
 			{
-				if (wurmiVelocity.X < -10f) {
-					wurmiVelocity += new Vector2 (80f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				if (entiVelocity.X < -10f) {
+					entiVelocity += new Vector2 (80f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 				} else
-					wurmiVelocity.X = 0;
+					entiVelocity.X = 0;
 			}
 
 			//Maximum Velocity X
-			if (wurmiVelocity.X > 40f)
-				wurmiVelocity.X = 40f;
-			if (wurmiVelocity.X < -40f)
-				wurmiVelocity.X = -40f;
+			if (entiVelocity.X > 40f)
+				entiVelocity.X = 40f;
+			if (entiVelocity.X < -40f)
+				entiVelocity.X = -40f;
 			
 
-			if (wurmiPosition.Y >= 650)
+			if (entiPosition.Y >= 650)
 			//{
-				wurmiVelocity.Y = 0;
-			//	if (wurmiVelocity.X > 0)
-			//		wurmiVelocity += new Vector2(0f, -10f * (float)gameTime.ElapsedGameTime.TotalSeconds);
-			//	if (wurmiVelocity.X < 0)
-			//		wurmiVelocity += new Vector2(0f, +10f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+				entiVelocity.Y = 0;
+			//	if (entiVelocity.X > 0)
+			//		entiVelocity += new Vector2(0f, -10f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			//	if (entiVelocity.X < 0)
+			//		entiVelocity += new Vector2(0f, +10f * (float)gameTime.ElapsedGameTime.TotalSeconds);
 				
 			//}
+
+			if (entiVelocity.X < 0)
+				entiMirror = SpriteEffects.FlipHorizontally;
+			if (entiVelocity.X > 0)
+				entiMirror = SpriteEffects.None;
 
 
 			base.Update (gameTime);
@@ -144,17 +153,22 @@ namespace Duckventure
             
 			//TODO: Add your drawing code here
 
-			Vector2 wurmiCenter = wurmiDimensions / 2;
+			//Vector2 entiCenter = entiDimensions / 2;
 
 
 			spriteBatch.Begin();
-			spriteBatch.Draw(wurmi, new Rectangle(
-				(int)(wurmiPosition.X - wurmiCenter.X),
-				(int)(wurmiPosition.Y - wurmiCenter.Y),
-				(int)(wurmiDimensions.X),
-				(int)(wurmiDimensions.Y)
-			), 
-				Color.White);
+			spriteBatch.Draw(enti, new Vector2(
+				(int)(entiPosition.X),
+				(int)(entiPosition.Y)
+				//(int)(entiDimensions.X),
+				//(int)(entiDimensions.Y)
+			), null,
+				Color.White,
+			0,
+				new Vector2(enti.Width / 2,enti.Height / 2),
+				entiScale,
+				entiMirror,
+			0);
 			spriteBatch.End();
 
 
