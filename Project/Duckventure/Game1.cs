@@ -18,9 +18,18 @@ namespace Duckventure
 		Texture2D enti;
 
 		//Vector2 entiDimensions = new Vector2(1440, 1387);
-		Vector2 entiPosition = new Vector2(100, 100);
+
+		int DisplaySizeX = 920;
+		int DisplaySizeY = 720;
+
+		int intro = 0;
+		int JumpCounter = 1;
+		KeyboardState formerkState;
+		//enti.Height / 2
+
+		Vector2 entiPosition = new Vector2(-800, 500);
 		Vector2 entiVelocity = new Vector2();
-		Vector2 entiScale = new Vector2(1,1);
+		Vector2 entiScale = new Vector2(0.7f,0.7f);
 		SpriteEffects entiMirror = SpriteEffects.None;
 
 
@@ -28,8 +37,8 @@ namespace Duckventure
 		{
 			graphics = new GraphicsDeviceManager (this);
 
-			graphics.PreferredBackBufferWidth = 960;
-			graphics.PreferredBackBufferHeight = 720;
+			graphics.PreferredBackBufferWidth = DisplaySizeX;
+			graphics.PreferredBackBufferHeight = DisplaySizeY;
 
 			Content.RootDirectory = "Content";
 
@@ -70,31 +79,43 @@ namespace Duckventure
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update (GameTime gameTime)
 		{
-			// For Mobile devices, this logic will close the Game when the Back button is pressed
+			// For Mobile devices, this logic will close the Gamae when the Back button is pressed
 			// Exit() is obsolete on iOS
 			
 			//if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState ().IsKeyDown (Keys.Escape))
 			//	Exit ();
-			KeyboardState kState = Keyboard.GetState();
-
-			if (kState.IsKeyDown (Keys.W))
-				entiVelocity.Y = -60;
+			KeyboardState kState = Keyboard.GetState ();
+			if (intro == 1){
+			if (kState.IsKeyDown (Keys.W) && formerkState.IsKeyUp (Keys.W)) {
+				if (entiPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
+					entiVelocity.Y = -60;
+					JumpCounter = 0;
+				} else if (JumpCounter < 2) {
+					entiVelocity.Y = -60;
+					JumpCounter += 1;
+				}
+			}
 			if (kState.IsKeyDown (Keys.A))
-				entiVelocity += new Vector2(-800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				entiVelocity += new Vector2 (-800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 			if (kState.IsKeyDown (Keys.S))
-				entiVelocity += new Vector2(0f, 50f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				entiVelocity += new Vector2 (0, 150f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 			if (kState.IsKeyDown (Keys.D))
-				entiVelocity += new Vector2(800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-			if (kState.IsKeyDown (Keys.Space))
+				entiVelocity += new Vector2 (800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+			}
+			if (kState.IsKeyDown (Keys.Space)) {
 				//entiDimensions = new Vector2 (103, 99);
 				entiScale = new Vector2 (0.07f, 0.07f);
+				intro = 1;
+			}
 			
 
 
 			//Gravity:
-			if (entiPosition.Y <= 650)
-			entiVelocity += new Vector2(0f, 110f * (float)gameTime.ElapsedGameTime.TotalSeconds);
-
+		
+			if (entiPosition.Y <= 650) {
+				if (intro == 1)
+				entiVelocity += new Vector2 (0f, 110f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			}
 
 			entiPosition += (10 * entiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
 
@@ -121,11 +142,16 @@ namespace Duckventure
 				entiVelocity.X = 40f;
 			if (entiVelocity.X < -40f)
 				entiVelocity.X = -40f;
-			
 
-			if (entiPosition.Y >= 650)
-			//{
+
+			//BODEN
+			if (entiPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
 				entiVelocity.Y = 0;
+				if (intro == 1) {
+					entiPosition.Y = (float)DisplaySizeY - ((enti.Height * entiScale.Y) / 2);
+				}
+			}
+			
 			//	if (entiVelocity.X > 0)
 			//		entiVelocity += new Vector2(0f, -10f * (float)gameTime.ElapsedGameTime.TotalSeconds);
 			//	if (entiVelocity.X < 0)
@@ -137,6 +163,15 @@ namespace Duckventure
 				entiMirror = SpriteEffects.FlipHorizontally;
 			if (entiVelocity.X > 0)
 				entiMirror = SpriteEffects.None;
+
+
+
+			//Startanimation
+			if (gameTime.TotalGameTime.TotalSeconds < 2)
+				entiVelocity.X = 40f;
+				
+
+			formerkState = kState;
 
 
 			base.Update (gameTime);
