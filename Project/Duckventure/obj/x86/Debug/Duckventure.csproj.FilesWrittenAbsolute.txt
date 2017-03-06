@@ -23,3 +23,4 @@
 /home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/MonoGame.Framework.dll
 /home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/OpenTK.dll
 /home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/NVorbis.dll
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Map/Map

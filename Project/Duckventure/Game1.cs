@@ -37,6 +37,7 @@ namespace Duckventure
 		Vector2 entiVelocity = new Vector2();
 		Vector2 entiScale = new Vector2(0.7f,0.7f);
 		SpriteEffects entiMirror = SpriteEffects.None;
+		Map level;
 
 
 		public Game1 ()
@@ -75,6 +76,8 @@ namespace Duckventure
 
 			//TODO: use this.Content to load your game content here 
 			enti = Content.Load<Texture2D>("Textures/enti");
+
+			level = Map.Load("Content/Map/Map");
 
 			}
 
@@ -223,8 +226,18 @@ namespace Duckventure
 
 			//Vector2 entiCenter = entiDimensions / 2;
 
-
 			spriteBatch.Begin();
+
+			for (int y = 0; y < Map.MAPHEIGHT; y++) 
+			{
+				for (int x = 0; x < Map.MAPWIDTH; x++) 
+				{
+					if (level.Cells [x, y] == CellType.Platform)
+						spriteBatch.Draw(enti, new Rectangle(x* 20 - (int)weltVector.X,y* 20 - (int)weltVector.Y, 20, 20), Color.White);
+					
+				}
+			}
+
 			spriteBatch.Draw(enti, new Vector2(
 				(int)(entiDisplayPosition.X),
 				(int)(entiDisplayPosition.Y)
