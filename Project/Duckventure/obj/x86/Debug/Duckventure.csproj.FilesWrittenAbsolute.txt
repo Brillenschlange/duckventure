@@ -11,3 +11,15 @@
 /home/fabian/Git/duckventure/Project/Duckventure/obj/x86/Debug/Duckventure.Content.Textures.wurmi.png
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/wurmi.png
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/enti.png
+/home/kellerkind/Git/duckventure/Project/Duckventure/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/kellerkind/Git/duckventure/Project/Duckventure/obj/x86/Debug/Duckventure.Icon.ico
+/home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/wurmi.png
+/home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/enti.png
+/home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/OpenTK.dll.config
+/home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/Duckventure.exe.mdb
+/home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/Duckventure.exe
+/home/kellerkind/Git/duckventure/Project/Duckventure/obj/x86/Debug/Duckventure.exe
+/home/kellerkind/Git/duckventure/Project/Duckventure/obj/x86/Debug/Duckventure.exe.mdb
+/home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/MonoGame.Framework.dll
+/home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/OpenTK.dll
+/home/kellerkind/Git/duckventure/Project/Duckventure/bin/Debug/NVorbis.dll

@@ -27,7 +27,13 @@ namespace Duckventure
 		KeyboardState formerkState;
 		//enti.Height / 2
 
-		Vector2 entiPosition = new Vector2(-800, 500);
+		Vector2 weltVector = new Vector2(0,0);
+
+		//Position relative to World
+		Vector2 entiRealPosition = new Vector2(-800,500);
+
+		//Postion relative to Window
+		Vector2 entiDisplayPosition = new Vector2(-800, 500);
 		Vector2 entiVelocity = new Vector2();
 		Vector2 entiScale = new Vector2(0.7f,0.7f);
 		SpriteEffects entiMirror = SpriteEffects.None;
@@ -87,7 +93,7 @@ namespace Duckventure
 			KeyboardState kState = Keyboard.GetState ();
 			if (intro == 1){
 			if (kState.IsKeyDown (Keys.W) && formerkState.IsKeyUp (Keys.W)) {
-				if (entiPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
+				if (entiRealPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
 					entiVelocity.Y = -60;
 					JumpCounter = 0;
 				} else if (JumpCounter < 2) {
@@ -107,17 +113,28 @@ namespace Duckventure
 				entiScale = new Vector2 (0.07f, 0.07f);
 				intro = 1;
 			}
-			
+//			if (kState.IsKeyDown (Keys.Right)) {
+//				//entiDimensions = new Vector2 (103, 99);
+//				weltVector.X += 20;
+//
+//			}
+//
+//			if (kState.IsKeyDown (Keys.Left)) {
+//				//entiDimensions = new Vector2 (103, 99);
+//				weltVector.X -= 20;
+//
+//			}
+
 
 
 			//Gravity:
 		
-			if (entiPosition.Y <= 650) {
+			if (entiRealPosition.Y <= 650) {
 				if (intro == 1)
 				entiVelocity += new Vector2 (0f, 110f * (float)gameTime.ElapsedGameTime.TotalSeconds);
 			}
 
-			entiPosition += (10 * entiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			entiRealPosition += (10 * entiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
 
 			//Träg-idy
 			if (entiVelocity.X > 0) 
@@ -145,10 +162,10 @@ namespace Duckventure
 
 
 			//BODEN
-			if (entiPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
+			if (entiRealPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
 				entiVelocity.Y = 0;
 				if (intro == 1) {
-					entiPosition.Y = (float)DisplaySizeY - ((enti.Height * entiScale.Y) / 2);
+					entiRealPosition.Y = (float)DisplaySizeY - ((enti.Height * entiScale.Y) / 2);
 				}
 			}
 			
@@ -163,6 +180,21 @@ namespace Duckventure
 				entiMirror = SpriteEffects.FlipHorizontally;
 			if (entiVelocity.X > 0)
 				entiMirror = SpriteEffects.None;
+
+
+			//Scrolling
+			entiDisplayPosition.X = entiRealPosition.X - weltVector.X;
+			entiDisplayPosition.Y = entiRealPosition.Y - weltVector.Y;
+
+			if (intro == 1) {
+				if (entiDisplayPosition.X > DisplaySizeX)
+					weltVector += new Vector2 (DisplaySizeX, 0);
+				else if (entiDisplayPosition.X < DisplaySizeX)
+					weltVector -= new Vector2 (DisplaySizeX, 0);
+			}
+
+
+
 
 
 
@@ -193,8 +225,8 @@ namespace Duckventure
 
 			spriteBatch.Begin();
 			spriteBatch.Draw(enti, new Vector2(
-				(int)(entiPosition.X),
-				(int)(entiPosition.Y)
+				(int)(entiDisplayPosition.X),
+				(int)(entiDisplayPosition.Y)
 				//(int)(entiDimensions.X),
 				//(int)(entiDimensions.Y)
 			), null,
