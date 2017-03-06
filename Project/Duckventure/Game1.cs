@@ -187,10 +187,11 @@ namespace Duckventure
 			entiDisplayPosition.Y = entiRealPosition.Y - weltVector.Y;
 
 			if (intro == 1) {
-				if (entiDisplayPosition.X > DisplaySizeX)
+				if (entiDisplayPosition.X > DisplaySizeX) { 
 					weltVector += new Vector2 (DisplaySizeX, 0);
-				else if (entiDisplayPosition.X < DisplaySizeX)
+				} else if (entiDisplayPosition.X < 0) {
 					weltVector -= new Vector2 (DisplaySizeX, 0);
+				}
 			}
 
 
