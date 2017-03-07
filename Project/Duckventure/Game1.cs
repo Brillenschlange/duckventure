@@ -25,6 +25,7 @@ namespace Duckventure
 
 		int intro = 0;
 		int JumpCounter = 1;
+
 		KeyboardState formerkState;
 		//enti.Height / 2
 
@@ -212,7 +213,7 @@ namespace Duckventure
 
 			formerkState = kState;
 
-            //Kolision
+            //Kollision
 
             Rectangle entibox = new Rectangle(
                 (int)(entiRealPosition.X), 
@@ -230,10 +231,13 @@ namespace Duckventure
                             if (box.Intersects(entibox))
                             {
                                 if (intro == 1)
-                                {
-                                entiVelocity.Y = 0;
-                                entiRealPosition.Y = y*20 - ((enti.Height * entiScale.Y) / 2);
-                                JumpCounter = 0;
+                                    {
+                                        if (entiVelocity.Y > 0)
+                                        {
+                                            entiVelocity.Y = 0;
+                                            entiRealPosition.Y = y * 20 - ((enti.Height * entiScale.Y) / 2);
+                                            JumpCounter = 0;
+                                        }
                                 }
                             }
                     }
@@ -275,7 +279,6 @@ namespace Duckventure
                     {
                         if (level.Cells[x, y] == CellType.Platform)
                             spriteBatch.Draw(enti, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
-
                     }
                 }
             }

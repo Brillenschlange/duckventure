@@ -36,10 +36,6 @@ namespace Duckventure
 						case '#':
 							map.Cells [x, y] = CellType.Platform;
 							break;
-                        case '+':
-                            map.Cells[x, y] = CellType.HitboxPlatform;
-                            break;
-						default:
 							throw new NotSupportedException ();
 						}
 
@@ -51,7 +47,7 @@ namespace Duckventure
 	}
 	public enum CellType
 		{
-			Air, Platform, HitboxPlatform
+			Air, Platform
 		}
 	
 }
