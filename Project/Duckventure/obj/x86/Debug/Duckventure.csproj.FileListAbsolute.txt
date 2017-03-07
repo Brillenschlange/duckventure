@@ -1,0 +1,13 @@
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\obj\x86\Debug\Duckventure.exe
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\OpenTK.dll.config
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\wurmi.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\enti.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Map\Map
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Duckventure.exe
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Duckventure.pdb
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\MonoGame.Framework.dll
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\NVorbis.dll
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\OpenTK.dll
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\obj\x86\Debug\Duckventure.csprojResolveAssemblyReference.cache
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\obj\x86\Debug\Duckventure.pdb
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\start-space.png

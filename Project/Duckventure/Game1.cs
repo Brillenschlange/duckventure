@@ -16,6 +16,7 @@ namespace Duckventure
 		SpriteBatch spriteBatch;
 
 		Texture2D enti;
+        Texture2D space;
 
 		//Vector2 entiDimensions = new Vector2(1440, 1387);
 
@@ -37,6 +38,7 @@ namespace Duckventure
 		Vector2 entiVelocity = new Vector2();
 		Vector2 entiScale = new Vector2(0.7f,0.7f);
 		SpriteEffects entiMirror = SpriteEffects.None;
+        Vector2 spaceScale = new Vector2(0.1f, 0.1f);
 		Map level;
 
 
@@ -76,6 +78,7 @@ namespace Duckventure
 
 			//TODO: use this.Content to load your game content here 
 			enti = Content.Load<Texture2D>("Textures/enti");
+            space = Content.Load<Texture2D>("Textures/start-space");
 
 			level = Map.Load("Content/Map/Map");
 
@@ -209,8 +212,37 @@ namespace Duckventure
 
 			formerkState = kState;
 
+            //Kolision
 
-			base.Update (gameTime);
+            Rectangle entibox = new Rectangle(
+                (int)(entiRealPosition.X), 
+                (int)(entiRealPosition.Y), 
+                (int)(enti.Height*entiScale.Y/2), 
+                (int)(enti.Width*entiScale.X/2));
+
+            for (int y = 0; y < Map.MAPHEIGHT; y++)
+            {
+                for (int x = 0; x < Map.MAPWIDTH; x++)
+                {
+                    if (level.Cells[x, y] == CellType.Platform)
+                    {
+                        Rectangle box = new Rectangle(x * 20, y * 20, 20, 20);
+                            if (box.Intersects(entibox))
+                            {
+                                if (intro == 1)
+                                {
+                                entiVelocity.Y = 0;
+                                entiRealPosition.Y = y*20 - ((enti.Height * entiScale.Y) / 2);
+                                JumpCounter = 0;
+                                }
+                            }
+                    }
+                        
+
+                }
+            }
+
+            base.Update (gameTime);
 
 		}
 
@@ -228,15 +260,25 @@ namespace Duckventure
 
 			spriteBatch.Begin();
 
-			for (int y = 0; y < Map.MAPHEIGHT; y++) 
-			{
-				for (int x = 0; x < Map.MAPWIDTH; x++) 
-				{
-					if (level.Cells [x, y] == CellType.Platform)
-						spriteBatch.Draw(enti, new Rectangle(x* 20 - (int)weltVector.X,y* 20 - (int)weltVector.Y, 20, 20), Color.White);
-					
-				}
-			}
+            if (intro == 0)
+            {
+                spriteBatch.Draw(space, new Vector2(
+                    (int)450,
+                    (int)200));
+            }          
+
+            if (intro == 1)
+            {
+                for (int y = 0; y < Map.MAPHEIGHT; y++)
+                {
+                    for (int x = 0; x < Map.MAPWIDTH; x++)
+                    {
+                        if (level.Cells[x, y] == CellType.Platform)
+                            spriteBatch.Draw(enti, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+
+                    }
+                }
+            }
 
 			spriteBatch.Draw(enti, new Vector2(
 				(int)(entiDisplayPosition.X),
