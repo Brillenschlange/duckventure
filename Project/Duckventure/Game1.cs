@@ -102,8 +102,8 @@ namespace Duckventure
 			if (kState.IsKeyDown (Keys.W) && formerkState.IsKeyUp (Keys.W)) {
 				if (entiRealPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
 					entiVelocity.Y = -60;
-					JumpCounter = 0;
-				} else if (JumpCounter < 2) {
+					JumpCounter = 1;
+				} else if (JumpCounter < 3) {
 					entiVelocity.Y = -60;
 					JumpCounter += 1;
 				}
@@ -231,13 +231,13 @@ namespace Duckventure
                             if (box.Intersects(entibox))
                             {
                                 if (intro == 1)
+                                {
+                                    if (entiVelocity.Y > 0)
                                     {
-                                        if (entiVelocity.Y > 0)
-                                        {
-                                            entiVelocity.Y = 0;
-                                            entiRealPosition.Y = y * 20 - ((enti.Height * entiScale.Y) / 2);
-                                            JumpCounter = 0;
-                                        }
+                                        entiVelocity.Y = 0;
+                                        entiRealPosition.Y = y * 20 - ((enti.Height * entiScale.Y) / 2);
+                                        JumpCounter = 0;
+                                    }
                                 }
                             }
                     }
