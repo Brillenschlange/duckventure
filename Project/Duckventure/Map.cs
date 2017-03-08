@@ -12,7 +12,7 @@ namespace Duckventure
 		public static int MAPWIDTH = 138;
 		public static int MAPHEIGHT = 36;
 
-		public CellType [,] Cells { get; set; }
+        public CellType [,] Cells { get; set; }
 
 		public Map ()
 		{
@@ -33,10 +33,16 @@ namespace Duckventure
 						case '.':
 							map.Cells [x, y] = CellType.Air;
 							break;
-						case '#':
+						case '?':
 							map.Cells [x, y] = CellType.Platform;
 							break;
-							throw new NotSupportedException ();
+                        case '+':
+                            map.Cells[x, y] = CellType.Water;
+                            break;
+                        case '-':
+                            map.Cells[x, y] = CellType.Ground;
+                            break;
+                                throw new NotSupportedException ();
 						}
 
 					}
@@ -47,7 +53,7 @@ namespace Duckventure
 	}
 	public enum CellType
 		{
-			Air, Platform
+			Air, Platform, Water, Ground
 		}
 	
 }

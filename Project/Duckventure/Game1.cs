@@ -17,11 +17,16 @@ namespace Duckventure
 
 		Texture2D enti;
         Texture2D space;
+        Texture2D wurmi;
+        Texture2D copyright;
 
 		//Vector2 entiDimensions = new Vector2(1440, 1387);
 
 		int DisplaySizeX = 920;
 		int DisplaySizeY = 720;
+
+        int CellSizeX = 20;
+        int CellSizeY = 20;
 
 		int intro = 0;
 		int JumpCounter = 1;
@@ -80,6 +85,8 @@ namespace Duckventure
 			//TODO: use this.Content to load your game content here 
 			enti = Content.Load<Texture2D>("Textures/enti");
             space = Content.Load<Texture2D>("Textures/start-space");
+            wurmi = Content.Load<Texture2D>("Textures/wurmi");
+            copyright = Content.Load<Texture2D>("Textures/copyright");
 
 			level = Map.Load("Content/Map/Map");
 
@@ -115,11 +122,12 @@ namespace Duckventure
 			if (kState.IsKeyDown (Keys.D))
 				entiVelocity += new Vector2 (800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 			}
-			if (kState.IsKeyDown (Keys.Space)) {
-				//entiDimensions = new Vector2 (103, 99);
-				entiScale = new Vector2 (0.07f, 0.07f);
-				intro = 1;
-			}
+            if (kState.IsKeyDown(Keys.Space)) {
+                //entiDimensions = new Vector2 (103, 99);
+                entiScale = new Vector2(0.07f, 0.07f);
+                intro = 1;
+            }
+			
 //			if (kState.IsKeyDown (Keys.Right)) {
 //				//entiDimensions = new Vector2 (103, 99);
 //				weltVector.X += 20;
@@ -216,8 +224,8 @@ namespace Duckventure
             //Kollision
 
             Rectangle entibox = new Rectangle(
-                (int)(entiRealPosition.X), 
-                (int)(entiRealPosition.Y), 
+                (int)(entiRealPosition.X - enti.Width * entiScale.X /2 + CellSizeX/2), 
+                (int)(entiRealPosition.Y + enti.Height * entiScale.Y /2), 
                 (int)(enti.Height*entiScale.Y/2), 
                 (int)(enti.Width*entiScale.X/2));
 
@@ -227,21 +235,53 @@ namespace Duckventure
                 {
                     if (level.Cells[x, y] == CellType.Platform)
                     {
-                        Rectangle box = new Rectangle(x * 20, y * 20, 20, 20);
+                        Rectangle box = new Rectangle(x * 20 - CellSizeX, y * 20 + CellSizeY, 20, 20);
                             if (box.Intersects(entibox))
                             {
                                 if (intro == 1)
                                 {
-                                    if (entiVelocity.Y > 0)
+                                    if (entiVelocity.Y > 1)
                                     {
                                         entiVelocity.Y = 0;
-                                        entiRealPosition.Y = y * 20 - ((enti.Height * entiScale.Y) / 2);
+                                        entiRealPosition.Y = y * 20 - ((enti.Height * entiScale.Y)/2);
                                         JumpCounter = 0;
                                     }
                                 }
                             }
                     }
-                        
+                    if (level.Cells[x, y] == CellType.Ground)
+                    {
+                        Rectangle box = new Rectangle(x * 20 - CellSizeX, y * 20 + CellSizeY, 20, 20);
+                        if (box.Intersects(entibox))
+                        {
+                            if (intro == 1)
+                            {
+                                if (entiVelocity.Y > 0)
+                                {
+                                    entiVelocity.Y = 0;
+                                    entiRealPosition.Y = y * 20 - ((enti.Height * entiScale.Y) / 2);
+                                    JumpCounter = 0;
+                                }
+                            }
+                        }
+                    }
+                    if (level.Cells[x, y] == CellType.Water)
+                    {
+                        Rectangle box = new Rectangle(x * 20 - CellSizeX, y * 20 + CellSizeY, 20, 20);
+                        if (box.Intersects(entibox))
+                        {
+                            if (intro == 1)
+                            {
+                                if (entiVelocity.Y > 0)
+                                {
+                                    entiVelocity.Y = 0;
+                                    entiRealPosition.Y = y * 20 - ((enti.Height * entiScale.Y) / 2);
+                                    JumpCounter = 0;
+                                }
+                            }
+                        }
+                    }
+
 
                 }
             }
@@ -264,13 +304,23 @@ namespace Duckventure
 
 			spriteBatch.Begin();
 
+            // Draw Space in Startbildschirm
             if (intro == 0)
             {
                 spriteBatch.Draw(space, new Vector2(
-                    (int)450,
+                    (int)550,
                     (int)200));
-            }          
+            }
 
+            // Draw Copyright in Startbildschirm
+            if (intro == 0)
+            {
+                spriteBatch.Draw(copyright, new Vector2(
+                    (int) DisplaySizeX - 250,
+                    (int) DisplaySizeY - 30));
+            }
+
+            // Draw Map
             if (intro == 1)
             {
                 for (int y = 0; y < Map.MAPHEIGHT; y++)
@@ -279,10 +329,15 @@ namespace Duckventure
                     {
                         if (level.Cells[x, y] == CellType.Platform)
                             spriteBatch.Draw(enti, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+                        if (level.Cells[x, y] == CellType.Water)
+                            spriteBatch.Draw(wurmi, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+                        if (level.Cells[x, y] == CellType.Ground)
+                            spriteBatch.Draw(enti, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
                     }
                 }
             }
 
+            // Draw Enti
 			spriteBatch.Draw(enti, new Vector2(
 				(int)(entiDisplayPosition.X),
 				(int)(entiDisplayPosition.Y)
