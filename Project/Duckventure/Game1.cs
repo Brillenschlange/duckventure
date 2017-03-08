@@ -20,10 +20,21 @@ namespace Duckventure
         Texture2D wurmi;
         Texture2D copyright;
         Texture2D control;
+        Texture2D lifelost;
+        Texture2D zero;
+        Texture2D one;
+        Texture2D two;
+        Texture2D three;
+        Texture2D four;
+        Texture2D five;
+        Texture2D six;
+        Texture2D seven;
+        Texture2D eight;
+        Texture2D nine;
 
-		//Vector2 entiDimensions = new Vector2(1440, 1387);
+        //Vector2 entiDimensions = new Vector2(1440, 1387);
 
-		int DisplaySizeX = 920;
+        int DisplaySizeX = 920;
 		int DisplaySizeY = 720;
 
         int CellSizeX = 20;
@@ -34,6 +45,7 @@ namespace Duckventure
 
 		int intro = 0;
 		int JumpCounter = 1;
+        int LifeLostCounter = 0;
 
 		KeyboardState formerkState;
 		//enti.Height / 2
@@ -92,8 +104,19 @@ namespace Duckventure
             wurmi = Content.Load<Texture2D>("Textures/wurmi");
             copyright = Content.Load<Texture2D>("Textures/copyright");
             control = Content.Load<Texture2D>("Textures/control");
+            lifelost = Content.Load<Texture2D>("Textures/lifelost");
+            zero = Content.Load<Texture2D>("Textures/0");
+            one = Content.Load<Texture2D>("Textures/1");
+            two = Content.Load<Texture2D>("Textures/2");
+            three = Content.Load<Texture2D>("Textures/3");
+            four = Content.Load<Texture2D>("Textures/4");
+            five = Content.Load<Texture2D>("Textures/5");
+            six = Content.Load<Texture2D>("Textures/6");
+            seven = Content.Load<Texture2D>("Textures/7");
+            eight = Content.Load<Texture2D>("Textures/8");
+            nine = Content.Load<Texture2D>("Textures/9");
 
-			level = Map.Load("Content/Map/Map");
+            level = Map.Load("Content/Map/Map");
 
 			}
 
@@ -181,14 +204,14 @@ namespace Duckventure
 				entiVelocity.X = -40f;
 
 
-			//BODEN
-			if (entiRealPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
-				entiVelocity.Y = 0;
-				if (intro == 1) {
-					entiRealPosition.Y = (float)DisplaySizeY - ((enti.Height * entiScale.Y) / 2);
-				}
-			}
-			
+            //GameOver
+            if (intro == 1)
+                if (entiRealPosition.Y >= DisplaySizeY + ((enti.Height * entiScale.Y))) {
+                    entiRealPosition = new Vector2(-800, 500);
+                    LifeLostCounter += 1;
+                 
+            }
+
 			//	if (entiVelocity.X > 0)
 			//		entiVelocity += new Vector2(0f, -10f * (float)gameTime.ElapsedGameTime.TotalSeconds);
 			//	if (entiVelocity.X < 0)
@@ -223,7 +246,6 @@ namespace Duckventure
 					weltVector -= new Vector2 (DisplaySizeX, 0);
 				}
 			}
-
 
 
 
@@ -339,9 +361,59 @@ namespace Duckventure
             if (intro == 1)
             {
                 spriteBatch.Draw(control, new Vector2(
-                    (int) DisplaySizeX - 185,
-                    (int) 10));
+                    (int) DisplaySizeX - 260 - weltVector.X,
+                    (int) 10 - weltVector.Y));
             }
+
+            // Draw LifeLostCounter
+
+            if (intro == 1)
+            {
+                spriteBatch.Draw(lifelost, new Vector2(
+                    (int)10,
+                    (int)10));
+                if (LifeLostCounter == 0)
+                    spriteBatch.Draw(zero, new Vector2(
+                        (int)220,
+                        (int)10));
+                if (LifeLostCounter == 1)
+                    spriteBatch.Draw(one, new Vector2(
+                        (int)220,
+                        (int)10));
+                if (LifeLostCounter == 2)
+                    spriteBatch.Draw(two, new Vector2(
+                        (int)220,
+                        (int)10));
+                if (LifeLostCounter == 3)
+                    spriteBatch.Draw(three, new Vector2(
+                        (int)220,
+                        (int)10));
+                if (LifeLostCounter == 4)
+                    spriteBatch.Draw(four, new Vector2(
+                        (int)220,
+                        (int)10));
+                if (LifeLostCounter == 5)
+                    spriteBatch.Draw(five, new Vector2(
+                        (int)220,
+                        (int)10));
+                if (LifeLostCounter == 6)
+                    spriteBatch.Draw(six, new Vector2(
+                        (int)220,
+                        (int)10));
+                if (LifeLostCounter == 7)
+                    spriteBatch.Draw(seven, new Vector2(
+                        (int)220,
+                        (int)10));
+                if (LifeLostCounter == 8)
+                    spriteBatch.Draw(eight, new Vector2(
+                        (int)220,
+                        (int)10));
+                if (LifeLostCounter == 9)
+                    spriteBatch.Draw(nine, new Vector2(
+                        (int)220,
+                        (int)10));
+            }
+
 
             // Draw Map
             if (intro == 1)

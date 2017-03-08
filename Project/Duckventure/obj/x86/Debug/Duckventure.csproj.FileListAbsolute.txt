@@ -13,3 +13,14 @@ C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\obj\x86\Debug
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\start-space.png
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\copyright.png
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\control.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\lifelost.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\0.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\1.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\2.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\3.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\4.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\5.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\6.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\7.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\8.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\9.png
