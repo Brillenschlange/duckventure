@@ -19,6 +19,7 @@ namespace Duckventure
         Texture2D space;
         Texture2D wurmi;
         Texture2D copyright;
+        Texture2D control;
 
 		//Vector2 entiDimensions = new Vector2(1440, 1387);
 
@@ -27,6 +28,9 @@ namespace Duckventure
 
         int CellSizeX = 20;
         int CellSizeY = 20;
+
+        int MAPWIDTH = 138;
+        int MAPHEIGHT = 36;
 
 		int intro = 0;
 		int JumpCounter = 1;
@@ -87,6 +91,7 @@ namespace Duckventure
             space = Content.Load<Texture2D>("Textures/start-space");
             wurmi = Content.Load<Texture2D>("Textures/wurmi");
             copyright = Content.Load<Texture2D>("Textures/copyright");
+            control = Content.Load<Texture2D>("Textures/control");
 
 			level = Map.Load("Content/Map/Map");
 
@@ -196,9 +201,19 @@ namespace Duckventure
 			if (entiVelocity.X > 0)
 				entiMirror = SpriteEffects.None;
 
+            //Rand (links)
+            if (intro == 1)
+                if (entiRealPosition.X < 0 + enti.Width*entiScale.X/2)
+                    entiRealPosition.X = 0 + enti.Width*entiScale.X/2;
 
-			//Scrolling
-			entiDisplayPosition.X = entiRealPosition.X - weltVector.X;
+            //Rand (rechts)
+            if (intro == 1)
+                if (entiRealPosition.X > MAPWIDTH * CellSizeX - enti.Width * entiScale.X / 2)
+                    entiRealPosition.X = MAPWIDTH * CellSizeX - enti.Width * entiScale.X / 2;
+
+
+            //Scrolling
+            entiDisplayPosition.X = entiRealPosition.X - weltVector.X;
 			entiDisplayPosition.Y = entiRealPosition.Y - weltVector.Y;
 
 			if (intro == 1) {
@@ -216,8 +231,7 @@ namespace Duckventure
 
 			//Startanimation
 			if (gameTime.TotalGameTime.TotalSeconds < 2)
-				entiVelocity.X = 40f;
-				
+				entiVelocity.X = 40f;	
 
 			formerkState = kState;
 
@@ -318,6 +332,15 @@ namespace Duckventure
                 spriteBatch.Draw(copyright, new Vector2(
                     (int) DisplaySizeX - 250,
                     (int) DisplaySizeY - 30));
+            }
+
+            // Draw Steuerung
+
+            if (intro == 1)
+            {
+                spriteBatch.Draw(control, new Vector2(
+                    (int) DisplaySizeX - 185,
+                    (int) 10));
             }
 
             // Draw Map

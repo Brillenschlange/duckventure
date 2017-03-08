@@ -12,3 +12,4 @@ C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\obj\x86\Debug
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\obj\x86\Debug\Duckventure.pdb
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\start-space.png
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\copyright.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\control.png
