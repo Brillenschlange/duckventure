@@ -31,6 +31,8 @@ namespace Duckventure
         Texture2D seven;
         Texture2D eight;
         Texture2D nine;
+		Texture2D sharkifin;
+		Texture2D shark;
 
         //Vector2 entiDimensions = new Vector2(1440, 1387);
 
@@ -43,6 +45,8 @@ namespace Duckventure
         int MAPWIDTH = 138;
         int MAPHEIGHT = 36;
 
+		float sinusangle = 0;
+
 		int intro = 0;
 		int JumpCounter = 1;
         int LifeLostCounter = 0;
@@ -54,14 +58,24 @@ namespace Duckventure
 
 		//Position relative to World
 		Vector2 entiRealPosition = new Vector2(-800,500);
+		Vector2 sharkiRealPosition = new Vector2 ();
+		Vector2 sharkRealPosition = new Vector2 ();
 
 		//Postion relative to Window
 		Vector2 entiDisplayPosition = new Vector2(-800, 500);
 		Vector2 entiVelocity = new Vector2();
 		Vector2 entiScale = new Vector2(0.7f,0.7f);
 		SpriteEffects entiMirror = SpriteEffects.None;
-        Vector2 spaceScale = new Vector2(0.1f, 0.1f);
+
+		Vector2 sharkiDisplayPosition = new Vector2 ();
+		Vector2 sharkiVelocity = new Vector2 ();
+
+		Vector2 sharkDisplayPosition = new Vector2 ();
+		Vector2 sharkJump = new Vector2 ();
+
+
 		Map level;
+
 
 
 		public Game1 ()
@@ -115,6 +129,9 @@ namespace Duckventure
             seven = Content.Load<Texture2D>("Textures/7");
             eight = Content.Load<Texture2D>("Textures/8");
             nine = Content.Load<Texture2D>("Textures/9");
+			sharkifin = Content.Load<Texture2D> ("Textures/sharkfin");
+			shark = Content.Load<Texture2D> ("Textures/wurmi");
+
 
             level = Map.Load("Content/Map/Map");
 
@@ -138,7 +155,7 @@ namespace Duckventure
 				if (entiRealPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
 					entiVelocity.Y = -60;
 					JumpCounter = 1;
-				} else if (JumpCounter < 3) {
+				} else if (JumpCounter < 2) {
 					entiVelocity.Y = -60;
 					JumpCounter += 1;
 				}
@@ -168,7 +185,24 @@ namespace Duckventure
 //
 //			}
 
+			//Shark-idy
+			if (intro == 1) {
+				if (sharkiRealPosition.X < entiRealPosition.X)
+					sharkiVelocity += new Vector2 (400f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				if (sharkiRealPosition.X > entiRealPosition.X)
+					sharkiVelocity += new Vector2 (-400f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				}
 
+			//Shark-Jump
+			if (intro == 1)
+				if (sharkiRealPosition.X - entiRealPosition.X < 10)
+				sharkJump += new Vector2 (0f, 200f);
+
+			//Sinus-angle-update
+			sinusangle +=1 * (float)1.5 * (float)gameTime.ElapsedGameTime.TotalSeconds;
+			if (sinusangle == 361)
+				sinusangle = 0;
+				
 
 			//Gravity:
 		
@@ -178,6 +212,9 @@ namespace Duckventure
 			}
 
 			entiRealPosition += (10 * entiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			sharkiRealPosition += (5 * sharkiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			sharkRealPosition += (5 * sharkJump* (float)gameTime.ElapsedGameTime.TotalSeconds);
+
 
 			//Träg-idy
 			if (entiVelocity.X > 0) 
@@ -202,7 +239,11 @@ namespace Duckventure
 				entiVelocity.X = 40f;
 			if (entiVelocity.X < -40f)
 				entiVelocity.X = -40f;
-
+			if (sharkiVelocity.X > 160f)
+				sharkiVelocity.X = 160f;
+			if (sharkiVelocity.X < -160f)
+				sharkiVelocity.X = -160f;
+			
 
             //GameOver
             if (intro == 1)
@@ -248,8 +289,11 @@ namespace Duckventure
 			}
 
 
+			sharkiDisplayPosition.X = sharkiRealPosition.X - weltVector.X;
+			sharkiDisplayPosition.Y = sharkiRealPosition.Y - weltVector.Y;
 
-
+			sharkDisplayPosition.X = sharkRealPosition.X - weltVector.X;
+			sharkDisplayPosition.Y = sharkRealPosition.Y - weltVector.Y;
 
 			//Startanimation
 			if (gameTime.TotalGameTime.TotalSeconds < 2)
@@ -440,13 +484,44 @@ namespace Duckventure
 				//(int)(entiDimensions.Y)
 			), null,
 				Color.White,
-			0,
+				0,
 				new Vector2(enti.Width / 2,enti.Height / 2),
 				entiScale,
 				entiMirror,
-			0);
-			spriteBatch.End();
+				0);
 
+			// Draw Sharki
+			if (intro ==1)
+			spriteBatch.Draw(sharkifin, new Vector2(
+				(int)(sharkiDisplayPosition.X),
+				(int)(DisplaySizeY - 20)
+//				(int)(200),
+//				(int)(200)
+				//(int)(entiDimensions.X),
+				//(int)(entiDimensions.Y)
+			), null,
+				Color.White,
+				0,
+				new Vector2(sharkifin.Width / 2,sharkifin.Height / 2),
+				1,
+				SpriteEffects.None,
+				0);
+			
+			// Draw Shark
+			if (intro == 1)
+				spriteBatch.Draw(shark, new Vector2(
+					(int)(sharkDisplayPosition.X),
+					(int)(DisplaySizeY)), 
+					null,
+					Color.White,
+					0,
+					new Vector2(sharkifin.Width / 2,sharkifin.Height / 2),
+					1,
+					SpriteEffects.None,
+					0);
+
+
+			spriteBatch.End();
 
 			base.Draw (gameTime);
 		}
