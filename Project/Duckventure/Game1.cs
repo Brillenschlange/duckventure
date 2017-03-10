@@ -34,10 +34,13 @@ namespace Duckventure
         Texture2D nine;
 		Texture2D sharkifin;
 		Texture2D shark;
+<<<<<<< HEAD
         Texture2D keyA;
         Texture2D keyD;
         Texture2D keyS;
         Texture2D keyW;
+=======
+>>>>>>> origin/master
 
         //Vector2 entiDimensions = new Vector2(1440, 1387);
 
@@ -78,6 +81,10 @@ namespace Duckventure
 		Vector2 sharkiVelocity = new Vector2 ();
 
 		Vector2 sharkDisplayPosition = new Vector2 ();
+<<<<<<< HEAD
+=======
+		Vector2 sharkJump = new Vector2 ();
+>>>>>>> origin/master
 
 
 		Map level;
@@ -138,10 +145,13 @@ namespace Duckventure
             nine = Content.Load<Texture2D>("Textures/9");
 			sharkifin = Content.Load<Texture2D> ("Textures/sharkfin");
 			shark = Content.Load<Texture2D> ("Textures/wurmi");
+<<<<<<< HEAD
             keyA = Content.Load<Texture2D>("Textures/keyA");
             keyD = Content.Load<Texture2D>("Textures/keyD");
             keyS = Content.Load<Texture2D>("Textures/keyS");
             keyW = Content.Load<Texture2D>("Textures/keyW");
+=======
+>>>>>>> origin/master
 
 
             level = Map.Load("Content/Map/Map");
@@ -163,6 +173,7 @@ namespace Duckventure
 
             //Keys
 			KeyboardState kState = Keyboard.GetState ();
+<<<<<<< HEAD
 
 			if (intro == 0)
             {
@@ -182,6 +193,29 @@ namespace Duckventure
                         pCounter += 1;
                     }
                 }   
+=======
+			if (intro == 1){
+			if (kState.IsKeyDown (Keys.W) && formerkState.IsKeyUp (Keys.W)) {
+				if (entiRealPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
+					entiVelocity.Y = -60;
+					JumpCounter = 1;
+				} else if (JumpCounter < 2) {
+					entiVelocity.Y = -60;
+					JumpCounter += 1;
+				}
+			}
+			if (kState.IsKeyDown (Keys.A))
+				entiVelocity += new Vector2 (-800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+			if (kState.IsKeyDown (Keys.S))
+				entiVelocity += new Vector2 (0, 150f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+			if (kState.IsKeyDown (Keys.D))
+				entiVelocity += new Vector2 (800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+			}
+            if (kState.IsKeyDown(Keys.Space)) {
+                //entiDimensions = new Vector2 (103, 99);
+                entiScale = new Vector2(0.07f, 0.07f);
+                intro = 1;
+>>>>>>> origin/master
             }
             
             if (intro == 2)
@@ -253,6 +287,7 @@ namespace Duckventure
                     entiRealPosition += new Vector2(0f, -10);
                 }
 
+<<<<<<< HEAD
                 if (howtoplayCounter == 3)
                 {
                     if (entiRealPosition.Y <= 300)
@@ -282,6 +317,26 @@ namespace Duckventure
              }
 
             //Enti
+=======
+			//Shark-idy
+			if (intro == 1) {
+				if (sharkiRealPosition.X < entiRealPosition.X)
+					sharkiVelocity += new Vector2 (400f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				if (sharkiRealPosition.X > entiRealPosition.X)
+					sharkiVelocity += new Vector2 (-400f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+				}
+
+			//Shark-Jump
+			if (intro == 1)
+				if (sharkiRealPosition.X - entiRealPosition.X < 10)
+				sharkJump += new Vector2 (0f, 200f);
+
+			//Sinus-angle-update
+			sinusangle +=1 * (float)1.5 * (float)gameTime.ElapsedGameTime.TotalSeconds;
+			if (sinusangle == 361)
+				sinusangle = 0;
+				
+>>>>>>> origin/master
 
                 //Gravity
 		
@@ -299,6 +354,7 @@ namespace Duckventure
                     }
                 }
 
+<<<<<<< HEAD
             }
 
             entiRealPosition += (10 * entiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -306,6 +362,12 @@ namespace Duckventure
 //			sharkRealPosition += (100 * sharkJump * (float)gameTime.ElapsedGameTime.TotalSeconds);
 
                 //Inertia
+=======
+			entiRealPosition += (10 * entiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			sharkiRealPosition += (5 * sharkiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			sharkRealPosition += (5 * sharkJump* (float)gameTime.ElapsedGameTime.TotalSeconds);
+
+>>>>>>> origin/master
 
 			if (entiVelocity.X > 0) 
 			{
@@ -334,8 +396,12 @@ namespace Duckventure
 				sharkiVelocity.X = 160f;
 			if (sharkiVelocity.X < -160f)
 				sharkiVelocity.X = -160f;
+<<<<<<< HEAD
 
                 //Rotation on Display
+=======
+			
+>>>>>>> origin/master
 
             if (entiVelocity.X < 0)
 				entiMirror = SpriteEffects.FlipHorizontally;
@@ -426,9 +492,23 @@ namespace Duckventure
 			sharkiDisplayPosition.X = sharkiRealPosition.X - weltVector.X;
 			sharkiDisplayPosition.Y = sharkiRealPosition.Y - weltVector.Y;
 
+<<<<<<< HEAD
 			sharkDisplayPosition.X = sharkRealPosition.X - weltVector.X;
 			sharkDisplayPosition.Y = sharkRealPosition.Y - weltVector.Y;
 
+=======
+			sharkiDisplayPosition.X = sharkiRealPosition.X - weltVector.X;
+			sharkiDisplayPosition.Y = sharkiRealPosition.Y - weltVector.Y;
+
+			sharkDisplayPosition.X = sharkRealPosition.X - weltVector.X;
+			sharkDisplayPosition.Y = sharkRealPosition.Y - weltVector.Y;
+
+			//Startanimation
+			if (gameTime.TotalGameTime.TotalSeconds < 2)
+				entiVelocity.X = 40f;	
+
+			formerkState = kState;
+>>>>>>> origin/master
 
             //Kollision
 
@@ -669,6 +749,39 @@ namespace Duckventure
 				entiScale,
 				entiMirror,
 				0);
+<<<<<<< HEAD
+=======
+
+			// Draw Sharki
+			if (intro ==1)
+			spriteBatch.Draw(sharkifin, new Vector2(
+				(int)(sharkiDisplayPosition.X),
+				(int)(DisplaySizeY - 20)
+//				(int)(200),
+//				(int)(200)
+				//(int)(entiDimensions.X),
+				//(int)(entiDimensions.Y)
+			), null,
+				Color.White,
+				0,
+				new Vector2(sharkifin.Width / 2,sharkifin.Height / 2),
+				1,
+				SpriteEffects.None,
+				0);
+			
+			// Draw Shark
+			if (intro == 1)
+				spriteBatch.Draw(shark, new Vector2(
+					(int)(sharkDisplayPosition.X),
+					(int)(DisplaySizeY)), 
+					null,
+					Color.White,
+					0,
+					new Vector2(sharkifin.Width / 2,sharkifin.Height / 2),
+					1,
+					SpriteEffects.None,
+					0);
+>>>>>>> origin/master
 
             // Draw Sharki
             if (intro == 2)
@@ -693,6 +806,8 @@ namespace Duckventure
 //                    (int)(sharkDisplayPosition.Y)
 //                    ));
 //            }
+
+			spriteBatch.End();
 
 			spriteBatch.End();
 
