@@ -24,3 +24,10 @@ C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Con
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\7.png
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\8.png
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\9.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\sharkfin.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\howtoplay.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\keyA.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\keyD.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\keyS.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\keyW.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\howtoplaystart.png
