@@ -34,15 +34,15 @@ namespace Duckventure
         Texture2D nine;
 		Texture2D sharkifin;
 		Texture2D shark;
-<<<<<<< HEAD
         Texture2D keyA;
         Texture2D keyD;
         Texture2D keyS;
         Texture2D keyW;
-=======
->>>>>>> origin/master
-
-        //Vector2 entiDimensions = new Vector2(1440, 1387);
+        Texture2D water1;
+        Texture2D water2;
+        Texture2D platform1;
+        Texture2D platform2;
+        Texture2D platform3;
 
         int DisplaySizeX = 920;
 		int DisplaySizeY = 720;
@@ -53,23 +53,21 @@ namespace Duckventure
         int MAPWIDTH = 138;
         int MAPHEIGHT = 36;
 
-		float sinusangle = 0;
-
 		int intro = 0;
 		int JumpCounter = 1;
         int LifeLostCounter = 0;
         int howtoplayCounter = 0;
         int pCounter = 0;
+        int sharkAktion = 0;
  
 		KeyboardState formerkState;
-		//enti.Height / 2
 
 		Vector2 weltVector = new Vector2(0,0);
 
 		//Position relative to World
 		Vector2 entiRealPosition = new Vector2(-800,500);
 		Vector2 sharkiRealPosition = new Vector2 ();
-		Vector2 sharkRealPosition = new Vector2 ();
+		Vector2 sharkRealPosition = new Vector2 (0, 720);
 
 		//Postion relative to Window
 		Vector2 entiDisplayPosition = new Vector2(-800, 500);
@@ -81,10 +79,7 @@ namespace Duckventure
 		Vector2 sharkiVelocity = new Vector2 ();
 
 		Vector2 sharkDisplayPosition = new Vector2 ();
-<<<<<<< HEAD
-=======
-		Vector2 sharkJump = new Vector2 ();
->>>>>>> origin/master
+        Vector2 sharkJump = new Vector2();
 
 
 		Map level;
@@ -145,13 +140,15 @@ namespace Duckventure
             nine = Content.Load<Texture2D>("Textures/9");
 			sharkifin = Content.Load<Texture2D> ("Textures/sharkfin");
 			shark = Content.Load<Texture2D> ("Textures/wurmi");
-<<<<<<< HEAD
             keyA = Content.Load<Texture2D>("Textures/keyA");
             keyD = Content.Load<Texture2D>("Textures/keyD");
             keyS = Content.Load<Texture2D>("Textures/keyS");
             keyW = Content.Load<Texture2D>("Textures/keyW");
-=======
->>>>>>> origin/master
+            water1 = Content.Load<Texture2D>("Textures/water1");
+            water2 = Content.Load<Texture2D>("Textures/water2");
+            platform1 = Content.Load<Texture2D>("Textures/platform1");
+            platform2 = Content.Load<Texture2D>("Textures/platform2");
+            platform3 = Content.Load<Texture2D>("Textures/platform3");
 
 
             level = Map.Load("Content/Map/Map");
@@ -173,7 +170,6 @@ namespace Duckventure
 
             //Keys
 			KeyboardState kState = Keyboard.GetState ();
-<<<<<<< HEAD
 
 			if (intro == 0)
             {
@@ -193,29 +189,6 @@ namespace Duckventure
                         pCounter += 1;
                     }
                 }   
-=======
-			if (intro == 1){
-			if (kState.IsKeyDown (Keys.W) && formerkState.IsKeyUp (Keys.W)) {
-				if (entiRealPosition.Y >= DisplaySizeY - ((enti.Height * entiScale.Y) / 2)) {
-					entiVelocity.Y = -60;
-					JumpCounter = 1;
-				} else if (JumpCounter < 2) {
-					entiVelocity.Y = -60;
-					JumpCounter += 1;
-				}
-			}
-			if (kState.IsKeyDown (Keys.A))
-				entiVelocity += new Vector2 (-800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-			if (kState.IsKeyDown (Keys.S))
-				entiVelocity += new Vector2 (0, 150f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-			if (kState.IsKeyDown (Keys.D))
-				entiVelocity += new Vector2 (800f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-			}
-            if (kState.IsKeyDown(Keys.Space)) {
-                //entiDimensions = new Vector2 (103, 99);
-                entiScale = new Vector2(0.07f, 0.07f);
-                intro = 1;
->>>>>>> origin/master
             }
             
             if (intro == 2)
@@ -284,10 +257,9 @@ namespace Duckventure
                 }
                 if (howtoplayCounter == 3)
                 {
-                    entiRealPosition += new Vector2(0f, -10);
+                    entiRealPosition += new Vector2(0f, -10f);
                 }
 
-<<<<<<< HEAD
                 if (howtoplayCounter == 3)
                 {
                     if (entiRealPosition.Y <= 300)
@@ -306,37 +278,39 @@ namespace Duckventure
                     }
                 }
                 if (howtoplayCounter == 5)
+                {
+                    entiRealPosition += new Vector2(0f, -10f);
+                }
+
+                if (howtoplayCounter == 5)
+                {
+                    if (entiRealPosition.Y <= 300)
+                    {
+                        entiRealPosition.Y = 300;
+                        howtoplayCounter = 6;
+                    }
+                }
+                if (howtoplayCounter == 6)
+                {
+                    if (entiRealPosition.Y >= 465)
+                    {
+                        entiVelocity = new Vector2(0, 0);
+                        entiRealPosition.Y = 465;
+                        howtoplayCounter = 7;
+                    }
+                }
+                if (howtoplayCounter == 7)
                 { 
                     intro = 0;
                     entiRealPosition = new Vector2(80, 500);
                     entiScale = new Vector2(0.7f,0.7f);
                     entiMirror = SpriteEffects.None;
                     pCounter -= 1;
-                    howtoplayCounter = 6;      
+                    howtoplayCounter = 8;      
                 }
              }
 
             //Enti
-=======
-			//Shark-idy
-			if (intro == 1) {
-				if (sharkiRealPosition.X < entiRealPosition.X)
-					sharkiVelocity += new Vector2 (400f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-				if (sharkiRealPosition.X > entiRealPosition.X)
-					sharkiVelocity += new Vector2 (-400f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-				}
-
-			//Shark-Jump
-			if (intro == 1)
-				if (sharkiRealPosition.X - entiRealPosition.X < 10)
-				sharkJump += new Vector2 (0f, 200f);
-
-			//Sinus-angle-update
-			sinusangle +=1 * (float)1.5 * (float)gameTime.ElapsedGameTime.TotalSeconds;
-			if (sinusangle == 361)
-				sinusangle = 0;
-				
->>>>>>> origin/master
 
                 //Gravity
 		
@@ -352,22 +326,19 @@ namespace Duckventure
                     {
                         entiVelocity += new Vector2(0f, 110f * (float)gameTime.ElapsedGameTime.TotalSeconds);
                     }
+                    if (howtoplayCounter == 5)
+                    {
+                        entiVelocity += new Vector2(0f, 110f * (float)gameTime.ElapsedGameTime.TotalSeconds);
+                    }
                 }
 
-<<<<<<< HEAD
             }
 
             entiRealPosition += (10 * entiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
 			sharkiRealPosition += (5 * sharkiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
-//			sharkRealPosition += (100 * sharkJump * (float)gameTime.ElapsedGameTime.TotalSeconds);
+			sharkRealPosition += (10 * sharkJump * (float)gameTime.ElapsedGameTime.TotalSeconds);
 
                 //Inertia
-=======
-			entiRealPosition += (10 * entiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
-			sharkiRealPosition += (5 * sharkiVelocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
-			sharkRealPosition += (5 * sharkJump* (float)gameTime.ElapsedGameTime.TotalSeconds);
-
->>>>>>> origin/master
 
 			if (entiVelocity.X > 0) 
 			{
@@ -396,12 +367,8 @@ namespace Duckventure
 				sharkiVelocity.X = 160f;
 			if (sharkiVelocity.X < -160f)
 				sharkiVelocity.X = -160f;
-<<<<<<< HEAD
 
                 //Rotation on Display
-=======
-			
->>>>>>> origin/master
 
             if (entiVelocity.X < 0)
 				entiMirror = SpriteEffects.FlipHorizontally;
@@ -414,7 +381,6 @@ namespace Duckventure
                 if (entiRealPosition.Y >= DisplaySizeY + ((enti.Height * entiScale.Y))) {
                     entiRealPosition = new Vector2(0, 500);
                     LifeLostCounter += 1;
-                 
             }
 
                 //Border left
@@ -428,8 +394,7 @@ namespace Duckventure
             if (intro == 2)
                 if (entiRealPosition.X > MAPWIDTH * CellSizeX - enti.Width * entiScale.X / 2)
                     entiRealPosition.X = MAPWIDTH * CellSizeX - enti.Width * entiScale.X / 2;
-
-			
+		
 
             //Sharkifin
 
@@ -442,35 +407,44 @@ namespace Duckventure
 					sharkiVelocity += new Vector2 (-400f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 				}
 
-                //Sinus-angle-update
-
-			sinusangle +=1 * (float)1.5 * (float)gameTime.ElapsedGameTime.TotalSeconds;
-			if (sinusangle == 361)
-				sinusangle = 0;
-
 
             //Shark
 
-            //Shark-Jump
+                //Shark-Jump
+            if (sharkAktion == 0)
+            sharkRealPosition += new Vector2(100f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-//            if (intro == 2)
-//            {
-//                if (entiRealPosition.X - sharkiRealPosition.X > (float)0.00000000001)
-//                {
-//                    sharkRealPosition.X = (int)sharkiRealPosition.X;
-//                    sharkRealPosition.Y = (int)sharkiRealPosition.Y;
-//                    sharkRealPosition.Y += -1;
-//                }
-//                if (sharkRealPosition.Y < entiRealPosition.Y)
-//                {
-//                    sharkRealPosition = new Vector2(0, 0);
-//                }
-//                if (sharkRealPosition.Y > DisplaySizeY)
-//                {
-//                    sharkRealPosition.Y = DisplaySizeY;
-//                }
-//                sharkRealPosition += new Vector2(0, 1);
-//            }
+            if (intro == 2)
+            {
+                if (sharkAktion == 0)
+                {
+                    if (sharkRealPosition.X > sharkiRealPosition.X)
+                    {
+
+                        sharkRealPosition.X = sharkiRealPosition.X;
+                        sharkAktion = 1;    
+                    }
+                }
+                if (sharkAktion == 1)
+                {
+                    sharkRealPosition += new Vector2(0, -200f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    if (sharkRealPosition.Y < entiDisplayPosition.Y)
+                    {
+                        sharkRealPosition.Y = entiDisplayPosition.Y;
+                        
+                        sharkAktion = 2;
+                    } 
+                }
+                if (sharkAktion == 2)
+                {
+                    sharkRealPosition += new Vector2(0f, 200f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    if (sharkRealPosition.Y > DisplaySizeY)
+                    {
+                        sharkRealPosition = new Vector2(0,720 + weltVector.X);
+                        sharkAktion = 0;
+                    }
+                }
+            }
 			
 		    //Scrolling
 
@@ -492,23 +466,9 @@ namespace Duckventure
 			sharkiDisplayPosition.X = sharkiRealPosition.X - weltVector.X;
 			sharkiDisplayPosition.Y = sharkiRealPosition.Y - weltVector.Y;
 
-<<<<<<< HEAD
 			sharkDisplayPosition.X = sharkRealPosition.X - weltVector.X;
 			sharkDisplayPosition.Y = sharkRealPosition.Y - weltVector.Y;
 
-=======
-			sharkiDisplayPosition.X = sharkiRealPosition.X - weltVector.X;
-			sharkiDisplayPosition.Y = sharkiRealPosition.Y - weltVector.Y;
-
-			sharkDisplayPosition.X = sharkRealPosition.X - weltVector.X;
-			sharkDisplayPosition.Y = sharkRealPosition.Y - weltVector.Y;
-
-			//Startanimation
-			if (gameTime.TotalGameTime.TotalSeconds < 2)
-				entiVelocity.X = 40f;	
-
-			formerkState = kState;
->>>>>>> origin/master
 
             //Kollision
 
@@ -518,11 +478,27 @@ namespace Duckventure
                 (int)(enti.Height*entiScale.Y/2), 
                 (int)(enti.Width*entiScale.X/2));
 
+//            Rectangle sharkbox = new Rectangle(
+//                (int)(sharkRealPosition.X - shark.Width),
+//                (int)(sharkRealPosition.Y + shark.Height/2),
+//                (int)(shark.Height),
+//                (int)(shark.Width));
+
+//            if (sharkbox.Intersects(entibox))
+//            {
+//                if (intro == 2)
+//                {
+//                    LifeLostCounter += 1;
+//                    entiRealPosition = new Vector2(0, 500);
+//                }
+
+//            }
+
             for (int y = 0; y < Map.MAPHEIGHT; y++)
             {
                 for (int x = 0; x < Map.MAPWIDTH; x++)
                 {
-                    if (level.Cells[x, y] == CellType.Platform)
+                    if (level.Cells[x, y] == CellType.Platform1)
                     {
                         Rectangle box = new Rectangle(x * 20 - CellSizeX, y * 20 + CellSizeY, 20, 20);
                             if (box.Intersects(entibox))
@@ -538,14 +514,14 @@ namespace Duckventure
                                 }
                             }
                     }
-                    if (level.Cells[x, y] == CellType.Ground)
+                    if (level.Cells[x, y] == CellType.Platform2)
                     {
                         Rectangle box = new Rectangle(x * 20 - CellSizeX, y * 20 + CellSizeY, 20, 20);
                         if (box.Intersects(entibox))
                         {
                             if (intro == 2)
                             {
-                                if (entiVelocity.Y > 0)
+                                if (entiVelocity.Y > 1)
                                 {
                                     entiVelocity.Y = 0;
                                     entiRealPosition.Y = y * 20 - ((enti.Height * entiScale.Y) / 2);
@@ -554,14 +530,14 @@ namespace Duckventure
                             }
                         }
                     }
-                    if (level.Cells[x, y] == CellType.Water)
+                    if (level.Cells[x, y] == CellType.Platform3)
                     {
                         Rectangle box = new Rectangle(x * 20 - CellSizeX, y * 20 + CellSizeY, 20, 20);
                         if (box.Intersects(entibox))
                         {
                             if (intro == 2)
                             {
-                                if (entiVelocity.Y > 0)
+                                if (entiVelocity.Y > 1)
                                 {
                                     entiVelocity.Y = 0;
                                     entiRealPosition.Y = y * 20 - ((enti.Height * entiScale.Y) / 2);
@@ -570,8 +546,6 @@ namespace Duckventure
                             }
                         }
                     }
-
-
                 }
             }
 
@@ -638,6 +612,18 @@ namespace Duckventure
                     (int)0));
                 } 
                 if (howtoplayCounter == 4)
+                {
+                    spriteBatch.Draw(howtoplay, new Vector2(
+                        (int)0,
+                        (int)0));
+                }
+                if (howtoplayCounter == 5)
+                {
+                    spriteBatch.Draw(keyW, new Vector2(
+                    (int)0,
+                    (int)0));
+                }
+                if (howtoplayCounter == 6)
                 {
                     spriteBatch.Draw(howtoplay, new Vector2(
                         (int)0,
@@ -715,74 +701,6 @@ namespace Duckventure
             }
 
 
-            // Draw Map
-            if (intro == 2)
-            {
-                for (int y = 0; y < Map.MAPHEIGHT; y++)
-                {
-                    for (int x = 0; x < Map.MAPWIDTH; x++)
-                    {
-                        if (level.Cells[x, y] == CellType.Platform)
-                        {
-                            spriteBatch.Draw(enti, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
-                        }
-                        if (level.Cells[x, y] == CellType.Water)
-                        {
-                            spriteBatch.Draw(wurmi, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
-                        }
-                        if (level.Cells[x, y] == CellType.Ground)
-                        {
-                            spriteBatch.Draw(enti, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
-                        }
-                    }
-                }
-            }
-
-            // Draw Enti
-			spriteBatch.Draw(enti, new Vector2(
-				(int)(entiDisplayPosition.X),
-				(int)(entiDisplayPosition.Y)
-			), null,
-				Color.White,
-				0,
-				new Vector2(enti.Width / 2,enti.Height / 2),
-				entiScale,
-				entiMirror,
-				0);
-<<<<<<< HEAD
-=======
-
-			// Draw Sharki
-			if (intro ==1)
-			spriteBatch.Draw(sharkifin, new Vector2(
-				(int)(sharkiDisplayPosition.X),
-				(int)(DisplaySizeY - 20)
-//				(int)(200),
-//				(int)(200)
-				//(int)(entiDimensions.X),
-				//(int)(entiDimensions.Y)
-			), null,
-				Color.White,
-				0,
-				new Vector2(sharkifin.Width / 2,sharkifin.Height / 2),
-				1,
-				SpriteEffects.None,
-				0);
-			
-			// Draw Shark
-			if (intro == 1)
-				spriteBatch.Draw(shark, new Vector2(
-					(int)(sharkDisplayPosition.X),
-					(int)(DisplaySizeY)), 
-					null,
-					Color.White,
-					0,
-					new Vector2(sharkifin.Width / 2,sharkifin.Height / 2),
-					1,
-					SpriteEffects.None,
-					0);
->>>>>>> origin/master
-
             // Draw Sharki
             if (intro == 2)
             {
@@ -799,15 +717,62 @@ namespace Duckventure
             }
 
             // Draw Shark
-//            if (intro == 2)
-//            {
-//                spriteBatch.Draw(shark, new Vector2(
-//                    (int)(sharkDisplayPosition.X),
-//                    (int)(sharkDisplayPosition.Y)
-//                    ));
-//            }
+            if (intro == 2)
+            {
+                spriteBatch.Draw(shark, new Vector2(
+                    (int)(sharkDisplayPosition.X),
+                    (int)(sharkDisplayPosition.Y)), null,
+                    Color.White,
+                    0,
+                    new Vector2(0 , 0),
+                    1,
+                    SpriteEffects.None,
+                    0
+                    );
+            }
 
-			spriteBatch.End();
+            // Draw Map (Platform and Water)
+            if (intro == 2)
+            {
+                for (int y = 0; y < Map.MAPHEIGHT; y++)
+                {
+                    for (int x = 0; x < Map.MAPWIDTH; x++)
+                    {
+                        if (level.Cells[x, y] == CellType.Platform1)
+                        {
+                            spriteBatch.Draw(platform1, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+                        }
+                        if (level.Cells[x, y] == CellType.Platform2)
+                        {
+                            spriteBatch.Draw(platform2, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+                        }
+                        if (level.Cells[x, y] == CellType.Platform3)
+                        {
+                            spriteBatch.Draw(platform3, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+                        }
+                        if (level.Cells[x, y] == CellType.Water1)
+                        {
+                            spriteBatch.Draw(water1, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+                        }
+                        if (level.Cells[x, y] == CellType.Water2)
+                        {
+                            spriteBatch.Draw(water2, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+                        }
+                    }
+                }
+            }
+
+            // Draw Enti
+			spriteBatch.Draw(enti, new Vector2(
+				(int)(entiDisplayPosition.X),
+				(int)(entiDisplayPosition.Y)
+			), null,
+				Color.White,
+				0,
+				new Vector2(enti.Width / 2,enti.Height / 2),
+				entiScale,
+				entiMirror,
+				0);
 
 			spriteBatch.End();
 

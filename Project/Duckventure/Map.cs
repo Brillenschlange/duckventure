@@ -31,16 +31,22 @@ namespace Duckventure
 						switch (line[x])
 						{
 						case '.':
-							map.Cells [x, y] = CellType.Air;
+							map.Cells[x, y] = CellType.Air;
 							break;
-						case '?':
-							map.Cells [x, y] = CellType.Platform;
+						case '1':
+							map.Cells[x, y] = CellType.Platform1;
 							break;
-                        case '+':
-                            map.Cells[x, y] = CellType.Water;
+                        case '2':
+                            map.Cells[x, y] = CellType.Platform2;
                             break;
-                        case '-':
-                            map.Cells[x, y] = CellType.Ground;
+                        case '3':
+                            map.Cells[x, y] = CellType.Platform3;
+                            break;
+                        case '!':
+                            map.Cells[x, y] = CellType.Water1;
+                            break;
+                        case '?':
+                            map.Cells[x, y] = CellType.Water2;
                             break;
                                 throw new NotSupportedException ();
 						}
@@ -53,7 +59,7 @@ namespace Duckventure
 	}
 	public enum CellType
 		{
-			Air, Platform, Water, Ground
+			Air, Platform1, Platform2, Platform3, Water1, Water2
 		}
 	
 }

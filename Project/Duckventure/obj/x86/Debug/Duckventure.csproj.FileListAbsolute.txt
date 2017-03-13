@@ -31,3 +31,12 @@ C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Con
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\keyS.png
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\keyW.png
 C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\howtoplaystart.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Duckventure.exe.manifest
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Duckventure.application
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\obj\x86\Debug\Duckventure.exe.manifest
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\obj\x86\Debug\Duckventure.application
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\water1.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\water2.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\platform1.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\platform2.png
+C:\Users\Florian\Documents\Visual Studio 2015\Projects\Duckventure\bin\Debug\Content\Textures\platform3.png
