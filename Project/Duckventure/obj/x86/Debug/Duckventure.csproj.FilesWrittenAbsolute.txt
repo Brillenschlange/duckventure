@@ -39,3 +39,14 @@
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/8.png
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/9.png
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/sharkfin.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/howtoplay.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/keyA.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/keyD.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/keyS.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/keyW.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/howtoplaystart.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/water1.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/water2.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/platform1.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/platform2.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/platform3.png

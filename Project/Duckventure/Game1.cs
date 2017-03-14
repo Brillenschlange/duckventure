@@ -59,7 +59,8 @@ namespace Duckventure
         int howtoplayCounter = 0;
         int pCounter = 0;
         int sharkAktion = 0;
- 
+		float sharktimer = 0;
+			
 		KeyboardState formerkState;
 
 		Vector2 weltVector = new Vector2(0,0);
@@ -168,6 +169,7 @@ namespace Duckventure
 			//if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState ().IsKeyDown (Keys.Escape))
 			//	Exit ();
 
+			
             //Keys
 			KeyboardState kState = Keyboard.GetState ();
 
@@ -410,32 +412,39 @@ namespace Duckventure
 
             //Shark
 
+
+				
+
+
                 //Shark-Jump
-            if (sharkAktion == 0)
-            sharkRealPosition += new Vector2(100f, 0f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-            if (intro == 2)
-            {
-                if (sharkAktion == 0)
-                {
-                    if (sharkRealPosition.X > sharkiRealPosition.X)
-                    {
-
-                        sharkRealPosition.X = sharkiRealPosition.X;
-                        sharkAktion = 1;    
-                    }
-                }
-                if (sharkAktion == 1)
-                {
+                   	
+			if (intro == 2)
+			{
+				if (sharkAktion == 0)
+				{
+					sharktimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+					if (sharktimer >= 8)
+					{
+						sharkAktion += 1;
+						sharktimer = 0;
+					}
+					}
+				if (sharkAktion == 1) 
+				{	
+					sharkRealPosition.X = entiRealPosition.X;
+					sharkAktion = 2;
+				}
+				if (sharkAktion == 2)
+				{
                     sharkRealPosition += new Vector2(0, -200f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    if (sharkRealPosition.Y < entiDisplayPosition.Y)
+					if (sharkRealPosition.Y < DisplaySizeY/2)
                     {
-                        sharkRealPosition.Y = entiDisplayPosition.Y;
+						sharkRealPosition.Y = DisplaySizeY/2;
                         
-                        sharkAktion = 2;
+                        sharkAktion = 3;
                     } 
                 }
-                if (sharkAktion == 2)
+                if (sharkAktion == 3)
                 {
                     sharkRealPosition += new Vector2(0f, 200f) * (float)gameTime.ElapsedGameTime.TotalSeconds;
                     if (sharkRealPosition.Y > DisplaySizeY)
@@ -479,7 +488,7 @@ namespace Duckventure
                 (int)(enti.Width*entiScale.X/2));
 
 //            Rectangle sharkbox = new Rectangle(
-//                (int)(sharkRealPosition.X - shark.Width),
+//                (int)(sharkRealPosition.X),
 //                (int)(sharkRealPosition.Y + shark.Height/2),
 //                (int)(shark.Height),
 //                (int)(shark.Width));
@@ -704,6 +713,7 @@ namespace Duckventure
             // Draw Sharki
             if (intro == 2)
             {
+				if (sharkAktion == 0)
                 spriteBatch.Draw(sharkifin, new Vector2(
                     (int)(sharkiDisplayPosition.X),
                     (int)(DisplaySizeY - 20)
