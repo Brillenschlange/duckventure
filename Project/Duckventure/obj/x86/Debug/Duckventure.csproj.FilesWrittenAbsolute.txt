@@ -50,3 +50,4 @@
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/platform1.png
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/platform2.png
 /home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/platform3.png
+/home/fabian/Git/duckventure/Project/Duckventure/bin/Debug/Content/Textures/shark.png

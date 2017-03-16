@@ -17,7 +17,7 @@ namespace Duckventure
 
 		Texture2D enti;
         Texture2D space;
-        Texture2D wurmi;
+        Texture2D sharkjump;
         Texture2D copyright;
         Texture2D howtoplay;
         Texture2D howtoplaystart;
@@ -124,7 +124,7 @@ namespace Duckventure
 			//TODO: use this.Content to load your game content here 
 			enti = Content.Load<Texture2D>("Textures/enti");
             space = Content.Load<Texture2D>("Textures/start-space");
-            wurmi = Content.Load<Texture2D>("Textures/wurmi");
+            sharkjump = Content.Load<Texture2D>("Textures/shark");
             howtoplay = Content.Load<Texture2D>("Textures/howtoplay");
             howtoplaystart = Content.Load<Texture2D>("Textures/howtoplaystart");
             copyright = Content.Load<Texture2D>("Textures/copyright");
@@ -140,7 +140,7 @@ namespace Duckventure
             eight = Content.Load<Texture2D>("Textures/8");
             nine = Content.Load<Texture2D>("Textures/9");
 			sharkifin = Content.Load<Texture2D> ("Textures/sharkfin");
-			shark = Content.Load<Texture2D> ("Textures/wurmi");
+			shark = Content.Load<Texture2D> ("Textures/shark");
             keyA = Content.Load<Texture2D>("Textures/keyA");
             keyD = Content.Load<Texture2D>("Textures/keyD");
             keyS = Content.Load<Texture2D>("Textures/keyS");
@@ -721,7 +721,7 @@ namespace Duckventure
                     Color.White,
                     0,
                     new Vector2(sharkifin.Width / 2, sharkifin.Height / 2),
-                    1,
+						(float)0.4 ,
                     SpriteEffects.None,
                     0);
             }
@@ -735,7 +735,7 @@ namespace Duckventure
                     Color.White,
                     0,
                     new Vector2(0 , 0),
-                    1,
+					(float)0.3,
                     SpriteEffects.None,
                     0
                     );
