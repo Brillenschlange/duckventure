@@ -78,6 +78,9 @@ namespace Duckventure
 		Vector2 entiScale = new Vector2(0.7f,0.7f);
 		SpriteEffects entiMirror = SpriteEffects.None;
 
+		SpriteEffects sharkiMirror = SpriteEffects.None;
+
+
 		Vector2 sharkiDisplayPosition = new Vector2 ();
 		Vector2 sharkiVelocity = new Vector2 ();
 
@@ -369,10 +372,16 @@ namespace Duckventure
 
                 //Rotation on Display
 
-            if (entiVelocity.X < 0)
+			if (entiVelocity.X < 0)
 				entiMirror = SpriteEffects.FlipHorizontally;
 			if (entiVelocity.X > 0)
 				entiMirror = SpriteEffects.None;
+
+				//Sharki Rotation
+			if (sharkiVelocity.X < 0)
+				sharkiMirror = SpriteEffects.FlipHorizontally;
+			if (sharkiVelocity.X > 0)
+				sharkiMirror = SpriteEffects.None;
 
                 //LifeLostCounter +1
 
@@ -665,7 +674,7 @@ namespace Duckventure
                     0,
                     new Vector2(sharkifin.Width / 2, sharkifin.Height / 2),
 						(float)0.4 ,
-                    SpriteEffects.None,
+                    sharkiMirror,
                     0);
             }
 

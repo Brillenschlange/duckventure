@@ -30,6 +30,19 @@
 			<li><a href="#Nr5.1">Anlegen in Visual Studio</a></li>
 			<li><a href="#Nr5.2">Anlegen in MonoDevelop</a></li>
 		</ol>
+	<li><a href="Nr6">Aufbau und Funktion von Duckventure</a></li>
+		<ol>
+			<li><a href="#Nr6.1">Aufbau eines XNA-Projektes</a></li>
+			<li><a href="#Nr6.2">Noch was</a></li>
+		</ol>
+	<li><a href="Nr7">Einzelne Mechaniken anhand von Code-Ausschnitten</a></li>
+		<ol>			
+
+			<li><a href="#Nr7.1">Schwerkraft</a></li>
+			<li><a href="#Nr7.2">(Doppel-)Sprung</a></li>
+			<li><a href="#Nr7.3">Bewegung</a></li>
+			<li><a href="#Nr7.4">Der böse, weiße Hai</a></li>
+			<li><a href="#Nr7.5">Die Map</a></li>
 </ol>
 </p>
 
@@ -119,7 +132,18 @@
 <p><img src="images/idelinux/newsolution.png"></p>
 <p>Im n&auml;chsten Fenster wählt man links unter &quot;<i>MonoGame</i>&quot; - &quot;<i>App</i>&quot; ein &quot;<i>MonoGame Cross Platform Desktop Project</i>&quot;. Best&auml;tigen mit &quot;<i>Next</i>&quot;.</p>
 <p><img src="images/idelinux/configure.png"></p>
-<p>In diesem Fenster kann das Projekt benannt werden. Hierzu den gewünschten Projektnamen eingeben und den Speicherort (&quot;<i>Location</i>&quot;) auswählen. Mit &quot;<i>Create</i>&quot; (unten rechts) den Projektnamen bestätigen und das Projekt erstellen.
+<p>In diesem Fenster kann das Projekt benannt werden. Hierzu den gewünschten Projektnamen eingeben und den Speicherort (&quot;<i>Location</i>&quot;) auswählen. Mit &quot;<i>Create</i>&quot; (unten rechts) den Projektnamen bestätigen und das Projekt erstellen.</p>
+<h2 id="Nr6">6. Aufbau und Funktion von Duckventure </h2>
+<h3 id="Nr6.1">6.1 Aufbau eines XNA-Projektes</h3>
+<p>XNA ist ein Framework in C#, dass einem eine Art interaktives Koordinatensystem stellt, indem man Objekte berechnen und zeichnen kann. Dafür stellt es einem mehrere Funktionen:</p>
+<ol>
+<li>LoadContent</li>
+<p>Hier werden Objekte wie Bilder oder die Level-Map in das Projekt geladen.</p>
+<li>Update</li>
+<p>Hier finden die Berechnungen der Positionen und Handlungen der Objekte statt.</p>
+<li>Draw</li>
+<p>Hier werden Objekte auf die Bildfläche gezeichnet, dabei werden die Berechnungen aus Update angewendet.</p>
+</ol
 </div>
 </body>
 </html>
