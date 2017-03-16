@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace Duckventure
 {
@@ -22,16 +23,17 @@ namespace Duckventure
         Texture2D howtoplay;
         Texture2D howtoplaystart;
         Texture2D lifelost;
-        Texture2D zero;
-        Texture2D one;
-        Texture2D two;
-        Texture2D three;
-        Texture2D four;
-        Texture2D five;
-        Texture2D six;
-        Texture2D seven;
-        Texture2D eight;
-        Texture2D nine;
+		List<Texture2D> numbers;
+//        Texture2D zero;
+//        Texture2D one;
+//        Texture2D two;
+//        Texture2D three;
+//        Texture2D four;
+//        Texture2D five;
+//        Texture2D six;
+//        Texture2D seven;
+//        Texture2D eight;
+//        Texture2D nine;
 		Texture2D sharkifin;
 		Texture2D shark;
         Texture2D keyA;
@@ -129,16 +131,11 @@ namespace Duckventure
             howtoplaystart = Content.Load<Texture2D>("Textures/howtoplaystart");
             copyright = Content.Load<Texture2D>("Textures/copyright");
             lifelost = Content.Load<Texture2D>("Textures/lifelost");
-            zero = Content.Load<Texture2D>("Textures/0");
-            one = Content.Load<Texture2D>("Textures/1");
-            two = Content.Load<Texture2D>("Textures/2");
-            three = Content.Load<Texture2D>("Textures/3");
-            four = Content.Load<Texture2D>("Textures/4");
-            five = Content.Load<Texture2D>("Textures/5");
-            six = Content.Load<Texture2D>("Textures/6");
-            seven = Content.Load<Texture2D>("Textures/7");
-            eight = Content.Load<Texture2D>("Textures/8");
-            nine = Content.Load<Texture2D>("Textures/9");
+
+			numbers = new List<Texture2D> ();
+			for (int i = 0; i <= 9; i++)
+				numbers.Add (Content.Load<Texture2D> ("Textures/" + i));
+            
 			sharkifin = Content.Load<Texture2D> ("Textures/sharkfin");
 			shark = Content.Load<Texture2D> ("Textures/shark");
             keyA = Content.Load<Texture2D>("Textures/keyA");
@@ -646,67 +643,13 @@ namespace Duckventure
             {
                 spriteBatch.Draw(lifelost, new Vector2(
                     (int)10,
-                    (int)10));
-                if (LifeLostCounter == 0)
-                {
-                    spriteBatch.Draw(zero, new Vector2(
-                        (int)220,
-                        (int)10));
-                }
-                if (LifeLostCounter == 1)
-                {
-                    spriteBatch.Draw(one, new Vector2(
-                        (int)220,
-                        (int)10));
-                }
-                if (LifeLostCounter == 2)
-                {
-                    spriteBatch.Draw(two, new Vector2(
-                        (int)220,
-                        (int)10));
-                }
-                if (LifeLostCounter == 3)
-                {
-                    spriteBatch.Draw(three, new Vector2(
-                        (int)220,
-                        (int)10));
-                }
-                if (LifeLostCounter == 4)
-                {
-                    spriteBatch.Draw(four, new Vector2(
-                        (int)220,
-                        (int)10));
-                }
-                if (LifeLostCounter == 5)
-                {
-                    spriteBatch.Draw(five, new Vector2(
-                        (int)220,
-                        (int)10));
-                }
-                if (LifeLostCounter == 6)
-                {
-                    spriteBatch.Draw(six, new Vector2(
-                        (int)220,
-                        (int)10));
-                }
-                if (LifeLostCounter == 7)
-                {
-                    spriteBatch.Draw(seven, new Vector2(
-                        (int)220,
-                        (int)10));
-                }
-                if (LifeLostCounter == 8)
-                {
-                    spriteBatch.Draw(eight, new Vector2(
-                        (int)220,
-                        (int)10));
-                }
-                if (LifeLostCounter == 9)
-                {
-                    spriteBatch.Draw(nine, new Vector2(
-                        (int)220,
-                        (int)10));
-                }
+					(int)10));
+				if (LifeLostCounter < numbers.Count) {
+					
+					spriteBatch.Draw (numbers [LifeLostCounter], new Vector2 (
+						(int)220,
+						(int)10));
+				}
             }
 
 
