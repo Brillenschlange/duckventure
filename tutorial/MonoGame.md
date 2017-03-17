@@ -1,4 +1,4 @@
-# Tutorial: Download von MonoGame und Anlegen eines neuen Projektes unter den Betriebssystemen Windows und Linux
+# Tutorial: Download und Anlegen eines Projektes
 
 [1. Einrichtung der IDE unter Windows](#Nr1)
 
