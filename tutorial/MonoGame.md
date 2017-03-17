@@ -1,4 +1,4 @@
-# Tutorial: The Duckventure
+# Tutorial: Download von MonoGame und Anlegen eines neuen Projektes unter den Betriebssystemen Windows und Linux
 
 [1. Einrichtung der IDE unter Windows](#Nr1)
 
