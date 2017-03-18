@@ -49,7 +49,7 @@ Währenddessen arbeiteten wir an unserem Projet weiter, wobei uns das Video auf 
 Wir machten weitere Fortschritte bei unserem Projekt, indem wir Gravitation für alle Objekte im Bezugssystem einfügten. Dies dokumentierten wir ebenfalls auf GitHub.
 Am Ende der Stunde schauten und testeten wir die Projekte der anderen Gruppen.
 
-<p><h3<Dienstag, 21.02.2017</h3></p>
+<p><h3>Dienstag, 21.02.2017</h3></p>
 
 - Verbessern der Rechtschreibung für Dokumentation und Diary
 - Hinzufügen von style.css für Dokumentation
