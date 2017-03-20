@@ -17,8 +17,8 @@
 	<li><a href="#Nr2">Idee und Konzept</a></li>
 	<li><a href="#Nr3">Aufbau und Funktion von Duckventure</a></li>
 		<ol>
-			<li><a href="#Nr3.1">Aufbau eines XNA-Projektes</a></li>
-			<li><a href="#Nr3.2">Noch was</a></li>
+			<li><a href="#Nr3.1">Aufbau eines MonoGame-Projektes</a></li>
+			<li><a href="#Nr3.2">Aufbau der Game1.cs</a></li>
 		</ol>
 	<li><a href="#Nr4">Einzelne Mechaniken anhand von Code-Ausschnitten</a></li>
 		<ol>			
@@ -41,8 +41,13 @@
 
 <h2 id="Nr3">3. Aufbau und Funktion von Duckventure </h2>
 	
-<h3 id="Nr3.1">3.1 Aufbau eines XNA-Projektes</h3>
-<p>XNA ist ein Framework in C#, dass einem eine Art interaktives Koordinatensystem stellt, indem man Objekte berechnen und zeichnen kann. Dafür stellt es einem mehrere Funktionen:</p>
+<h3 id="Nr3.1">3.1 Aufbau eines MonoGame-Projektes</h3>
+<p>Beim Erstellen eines MonoGame-Projekts ist die Grundlage für das Erstellen und Gestalten eines Spiels durch das Framework XNA in C#bereits gegeben. XNA erstellt ein Projekt, welches sich als interaktives Koordinatensystem, in welchem man Objekte berechnen und zeichnen kann, beschreiben lässt. Im Folgenden ist eine Grafik zu sehen, welche den groben Aufbau und die Funktionen der einzelnen Dateien nach dem Erstellen des MonoGame-Projekts erklärt.</p>
+<p><img src="images/Aufbau_MonoGame.png"></p>
+	
+<h3 id="Nr3.2">3.2 Aufbau der Game1.cs</h3>
+<p>Die Game1.cs ist die wichtigste Datei bei der Erstellung eines Spiels. In der Datei werden Objekte erstellt, bewegt und gezeichnet. Dafür stellt es einem mehrere Funktionsabschnitte:
+
 <ol>
 <li>LoadContent</li>
 <p>Hier werden Objekte wie Bilder oder die Level-Map in das Projekt geladen. </p>
