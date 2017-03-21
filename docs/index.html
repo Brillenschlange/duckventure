@@ -15,21 +15,27 @@
 <ol>
 	<li><a href="#Nr1">Einleitung</a></li>
 	<li><a href="#Nr2">Idee und Konzept</a></li>
-	<li><a href="#Nr3">Aufbau und Funktion von Duckventure</a></li>
+	<li><a href="#Nr3">Das Spiel</a></li>
 		<ol>
-			<li><a href="#Nr3.1">Aufbau eines MonoGame-Projektes</a></li>
-			<li><a href="#Nr3.2">Aufbau der Game1.cs</a></li>
+			<li><a href="#Nr3.1">Der Startbildschirm</a></li>
+			<li><a href="#Nr3.2">Das Steuerungstutorial</a></li>
+			<li><a href="#Nr3.3">Das interaktive Spiel</a></li>
 		</ol>
-	<li><a href="#Nr4">Einzelne Mechaniken anhand von Code-Ausschnitten</a></li>
+	<li><a href="#Nr4">Aufbau und Funktion von Duckventure</a></li>
+		<ol>
+			<li><a href="#Nr4.1">Aufbau eines MonoGame-Projektes</a></li>
+			<li><a href="#Nr4.2">Aufbau der Game1.cs</a></li>
+		</ol>
+	<li><a href="#Nr5">Einzelne Mechaniken anhand von Code-Ausschnitten</a></li>
 		<ol>			
 
-			<li><a href="#Nr4.1">Schwerkraft</a></li>
-			<li><a href="#Nr4.2">(Doppel-)Sprung</a></li>
-			<li><a href="#Nr4.3">Bewegung</a></li>
-			<li><a href="#Nr4.4">Der böse, weiße Hai</a></li>
-			<li><a href="#Nr4.5">Die Map</a></li>
+			<li><a href="#Nr5.1">Schwerkraft</a></li>
+			<li><a href="#Nr5.2">Bewegung der Ente</a></li>
+			<li><a href="#Nr5.3">Sprung (bzw. Doppelsprung)</a></li>
+			<li><a href="#Nr5.4">Die Gegner</a></li>
+			<li><a href="#Nr5.5">Die Map</a></li>
 		</ol>
-	<li><a href="#Nr5">Fehlende Aspekte im Code</a></li>
+	<li><a href="#Nr6">Fehlende Aspekte im Code</a></li>
 </p>
 
 <h2 id="Nr1">1. Einleitung</h2>
@@ -37,15 +43,30 @@
 
 <h2 id="Nr2">2. Idee und Konzept</h2>
 <p>"<i>The Duckventure</i>" ist ein 2D Jump'n'Run, welches innerhalb des Informatikunterrichts entstanden ist. Es handelt davon, dass eine kleine Ente sich durch eine begrenzte Map mithilfe der Steuerung WASD bewegten lässt. Die Gegenbeiten sind den wirklichen Gegebenheiten weitesgehend angepasst. Es gibt eine vorherschende Schwerkraft, welche die Ente wieder auf den Boden drückt und ebenfalls einen Gegner der Ente, welcher versucht die Ente zu bekommen.</p>
-<p>Das Spiel ist noch nicht ganz fertiggestellt. Das bedeutet, dass noch eine Bugs zu finden sind und auch eine Dinge erst angedeutet, aber noch nicht vollständig implementiert worden sind. Hierzu jedoch weiteres im Abschnitt "<a href="#Nr5">Fehlende Aspekte im Code</a>"</p>
+<p>Das Spiel ist noch nicht ganz fertiggestellt. Das bedeutet, dass noch einige Bugs zu finden sind und auch einige Dinge erst angedeutet, aber noch nicht vollständig implementiert worden sind. Hierzu jedoch weiteres im Abschnitt "<a href="#Nr5">Fehlende Aspekte im Code</a>"</p>
 
-<h2 id="Nr3">3. Aufbau und Funktion von Duckventure </h2>
+<h2 id="Nr3">3. Das Spiel</h2>
+<p>Das Spiel "The Duckventure" besteht aus drei verschiedenen mehr oder wenig großen Teilen: dem Startbildschirm, dem Steuerungstutorial und dem interaktivem Spiel.</p>
+
+<h3 id="Nr3.1">3.1 Der Startbildschirm</h3>
+<p><img src="images/Start-Screen.PNG" style="width:690px;height:560px;border:0"></p>
+<p>Der Startbildschirm ist das erste Fenster, welcher der Spieler auf dem Bildschirm sieht, sobald er das Spiel startet. In diesem bewegt sich die Ente innerhalb der ersten drei Sekunden von links in das Fenster hinein und bleibt schließlich stehen. Es sind die Möglichkeiten zum Weiterspielen (Press Space) und zum Steuerungstutorial (Press P) zu sehen. Auch die Ersteller des Spiels werden auf dem Startbildschirm unten rechts angezeigt.</p>
+
+<h3 id="Nr3.2">3.2 Das Steuerungstutorial</h3>
+<p><img src="images/HowToPlay.PNG" style="width:690px;height:560px;border:0"></p>
+<p>Das Steuerungstutorial wird aus dem Startbildschirm mithilfe des Klicks auf den Key P erreicht. In diesem wird durch eine 10-sekündige Animation dem Spieler erklärt, wie die Steuerung (WASD) im interaktivem Spiel funktioniert. Das Tutorial kann nicht übersprungen werden, sondern muss vollständig angesehen werden. Es kann allerdings im Startbildschirm wiederholt werden.</p>
+
+<h3 id="Nr3.3">3.3 Das interaktive Spiel</h3>
+<p><img src="images/TheRealGame.PNG" style="width:690px;height:560px;border:0"></p>
+<p>Das interaktive Spiel bietet alle Features die im Tutorial erklärt worden sind. Die Ente kann sich durch die Steuerung WASD auf den Plattformen bewegen lassen. Sobald die Ente jedoch vollständig im Wasser versinkt, erhöht sich der LifeLostCounter um eine Zahl, es werden die Tode gezählt. Im unteren Bereich des Bildschirm bewegt sich eine Haiflosse und nach einer gewissen Zeit springt ein Hai aus dem Wasser und versucht die Ente zu erwischen.</p>
+
+<h2 id="Nr4">4. Aufbau und Funktion von Duckventure </h2>
 	
-<h3 id="Nr3.1">3.1 Aufbau eines MonoGame-Projektes</h3>
+<h3 id="Nr4.1">4.1 Aufbau eines MonoGame-Projektes</h3>
 <p>Beim Erstellen eines MonoGame-Projekts ist die Grundlage für das Erstellen und Gestalten eines Spiels durch das Framework XNA in C#bereits gegeben. XNA erstellt ein Projekt, welches sich als interaktives Koordinatensystem, in welchem man Objekte berechnen und zeichnen kann, beschreiben lässt. Im Folgenden ist eine Grafik zu sehen, welche den groben Aufbau und die Funktionen der einzelnen Dateien nach dem Erstellen des MonoGame-Projekts erklärt.</p>
 <p><img src="images/Aufbau_MonoGame.png"></p>
 	
-<h3 id="Nr3.2">3.2 Aufbau der Game1.cs</h3>
+<h3 id="Nr4.2">4.2 Aufbau der Game1.cs</h3>
 <p>Die Game1.cs ist die wichtigste Datei bei der Erstellung eines Spiels. In der Datei werden Objekte erstellt, bewegt und gezeichnet. Dafür stellt es einem mehrere Funktionsabschnitte:
 
 <ol>
@@ -63,20 +84,24 @@
 <p><img src="images/Draw_enti.PNG"></p>
 </ol>	
 	
-<h2 id="Nr4">4. Einzelne Mechaniken anhand von Code-Ausschnitten</h2>
+<h2 id="Nr5">5. Einzelne Mechaniken anhand von Code-Ausschnitten</h2>
 <p>Im Folgenden werden Bestandteile des Codes erklärt, welche für die Erstellung des Projekts "Duckventure" von hoher Bedeutung sind.</p>
 
-<h3 id="Nr4.1">4.1 Schwerkraft</h3>
+<h3 id="Nr5.1">5.1 Schwerkraft</h3>
 	
-<h3 id="Nr4.2">4.2 (Doppel-) Sprung</h3>
+<h3 id="Nr5.2">5.2 Bewegung der Ente</h3>
 	
-<h3 id="Nr4.3">4.3 Bewegung der Ente</h3>
+<h3 id="Nr5.3">5.3 Sprung (bzw. Doppelsprung)</h3>
 	
-<h3 id="Nr4.4">4.4 Die Gegner</h3>
+<h3 id="Nr5.4">5.4 Die Gegner</h3>
 	
-<h3 id="Nr4.5">4.5 Die Map</h3>
+<h3 id="Nr5.5">5.5 Die Map</h3>
 	
-<h2 id="Nr5">5. Fehlende Aspekte im Code</h2>
+<h2 id="Nr6">5. Fehlende Aspekte im Code</h2>
+<p>Fehlende Code-Abschnitte sind zum Beispiel die Überprüfung, ob der aus dem Wasser springende Hai die Ente trifft oder nicht. Bei dieser Überprüfung sollte die Ente anschließend an den Anfangspunkt gesetzt werden und der Todescounter um eine Zahl steigen.</p>
+<p>Der Todescounter kann zum Stand der Abgabe des Projektes nur bis zur Zahl 9 zählen und zeigt ab der nächsten Zahl nichts mehr an. Für dieses Problem sollten weitere Zahlen vorhanden sein oder ein allgemeiner Todesbildschirm eingeblendet werden (max. 9 Leben).</p>
+<p>In der Map fehlt ein Ziel, damit der Spieler das Level oder das Spiel erfolgreich beenden kann. Es könnte am Ende der Map eine Flagge sein, wo der Spieler durch Berühren zum Startbildschirm gelangt und das Spiel erneut starten kann. Eine weitere Idee wäre, dass der Spieler auf der Map einzelne Münzen oder Gegenstände finden kann und bei einer bestimmten Anzahl an Gegenständen das Spiel erfolgreich geschafft hat.</p>
+
 
 </div>
 </body>
