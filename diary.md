@@ -106,6 +106,10 @@ Fachtag unserer Gruppe:
 - Hinzufügen von Haiflossendrehung
 - Erweiterung der Dokumentation
 
+<p><h3>Dienstag, 21.03.2017</h3></p>
 
+- Vorstellung des Projektes
+- Arbeit an Dokumentation und Tagebuch
+- Optimierung von Zeichenebenen (Hai vor Plattform, vor Ente)
 
 
