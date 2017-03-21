@@ -661,7 +661,35 @@ namespace Duckventure
 				}
             }
 
+			// Draw Map (Plattform)
+			if (intro == 2) {
+				for (int y = 0; y < Map.MAPHEIGHT; y++) {
+					for (int x = 0; x < Map.MAPWIDTH; x++) {
+						if (level.Cells [x, y] == CellType.Platform1) {
+							spriteBatch.Draw (platform1, new Rectangle (x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+						}
+						if (level.Cells [x, y] == CellType.Platform2) {
+							spriteBatch.Draw (platform2, new Rectangle (x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+						}
+						if (level.Cells [x, y] == CellType.Platform3) {
+							spriteBatch.Draw (platform3, new Rectangle (x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
+						}
+					}
+				}
+			}
 
+			// Draw Enti
+			spriteBatch.Draw(enti, new Vector2(
+				(int)(entiDisplayPosition.X),
+				(int)(entiDisplayPosition.Y)
+			), null,
+				Color.White,
+				0,
+				new Vector2(enti.Width / 2,enti.Height / 2),
+				entiScale,
+				entiMirror,
+				0);
+			
             // Draw Sharki
             if (intro == 2)
             {
@@ -693,25 +721,13 @@ namespace Duckventure
                     );
             }
 
-            // Draw Map (Platform and Water)
+            // Draw Map (Water)
             if (intro == 2)
             {
                 for (int y = 0; y < Map.MAPHEIGHT; y++)
                 {
                     for (int x = 0; x < Map.MAPWIDTH; x++)
                     {
-                        if (level.Cells[x, y] == CellType.Platform1)
-                        {
-                            spriteBatch.Draw(platform1, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
-                        }
-                        if (level.Cells[x, y] == CellType.Platform2)
-                        {
-                            spriteBatch.Draw(platform2, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
-                        }
-                        if (level.Cells[x, y] == CellType.Platform3)
-                        {
-                            spriteBatch.Draw(platform3, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
-                        }
                         if (level.Cells[x, y] == CellType.Water1)
                         {
                             spriteBatch.Draw(water1, new Rectangle(x * 20 - (int)weltVector.X, y * 20 - (int)weltVector.Y, 20, 20), Color.White);
@@ -724,17 +740,7 @@ namespace Duckventure
                 }
             }
 
-            // Draw Enti
-			spriteBatch.Draw(enti, new Vector2(
-				(int)(entiDisplayPosition.X),
-				(int)(entiDisplayPosition.Y)
-			), null,
-				Color.White,
-				0,
-				new Vector2(enti.Width / 2,enti.Height / 2),
-				entiScale,
-				entiMirror,
-				0);
+            
 
 			spriteBatch.End();
 
