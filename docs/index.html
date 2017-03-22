@@ -108,12 +108,15 @@
 <p>Die Map bietet die Möglichkeit den Bildschirm in kleine Zellen zu unterteilen und diesen bestimmten Eigenschaften zuzuweisen. Die Breite und Höhe der Map (zu beachten: MAPWIDTH * CellSizeX = DisplaySize.X, damit der komplette Bildschirm gefüllt wird) muss zuerst festgelegt werden.</p>
 <p><img src="images/HöheundBreite.PNG"></p>
 <p>(Codeauszug: Zeilen 8-13 aus Map.cs)</p>
-<p>Die Eigenschaften der Zellen werden in einer weiteren Datei festgelegt. Diese Datei besteht aus Symbolen oder Zahlen der jeweiligen Anzahl der Höhe und Breite der Map. Um Plattformen oder andere Objekte einzubauen, muss ein anderen Symbol in die Map implementiert werden (Bsp.: Wahl der Eigenschaft Luft: . und Eigenschaft Plattform: #).</p>
+<p>Die Eigenschaften der Zellen werden in einer weiteren Datei festgelegt. Diese Datei besteht aus Symbolen oder Zahlen der jeweiligen Anzahl der Höhe und Breite der Map. Um Plattformen oder andere Objekte einzubauen, muss ein anderen Symbol in die Map implementiert werden (Bsp.: Wahl der Eigenschaft Luft: * und Eigenschaft Plattform: #).</p>
 <p><img src="images/Map.PNG"></p>
-<p>Die Symbole . und # müssen nun in der Map.cs als Luft und Plattform definiert werden. Dazu wird die Datei Map mithilfe eines Strings ausgelesen und sobald das Symbol # bzw. . gefunden wird, wird diesem die nachstehende Eigenschaft zugewiesen.</p>
+<p>(Codeauszug: Ähnlich zu den Zeilen 1-36 aus Map)</p>
+<p>Die Symbole * und # müssen nun in der Map.cs als Luft und Plattform definiert werden. Dazu wird die Datei Map mithilfe eines Strings ausgelesen und sobald das Symbol * bzw. # gefunden wird, wird diesem die nachstehende Eigenschaft zugewiesen. Wenn kein Symbol gefunden wird, wird dieser Zelle auch keine Eigenschaft zugewiesen.</p>
 <p><img src="images/CellsProperties.PNG"></p>
-<p>Die Zellen mit den jeweiligen Eigenschaften werden im Draw-Bereich der Game1.cs so gezeichnet, dass die Map-Datei wie im vorherigen Schritt ausgelesen wird und sobald das Symbol einer Plattform gefunden wurde, die Zelltextur der Plattform mit der Breite und Höhe der Zelle gezeichnet wird. Zu beachten: Die Pixelbreite bzw. -höhe der Textur im Content-Ordner sollte im Idealfall der Zellbreite bzw. -höhe exakt entsprechen.
+<p>(Codeauszug: Ähnlich zu den Zeilen 21-58 aus Map.cs)</p>
+<p>Die Zellen mit den jeweiligen Eigenschaften werden im Draw-Bereich der Game1.cs so gezeichnet, dass die Auslesung aus dem letzten Schritt hervorgerufen wird und sobald das Symbol einer Plattform gefunden wurde, die Zelltextur der Plattform mit der Breite und Höhe der Zelle gezeichnet wird. Zu beachten: Die Pixelbreite bzw. -höhe der Textur im Content-Ordner sollte im Idealfall der Zellbreite bzw. -höhe exakt entsprechen.
 <p><img src="images/DrawCells.PNG"></p>
+<p>(Codeauszug: Ähnlich zu den Zeilen 697-725 aus Game1.cs)</p>
 	
 <h3 id="Nr5.6">5.6 Kollision zwischen zwei Objekten</h3>
 	
