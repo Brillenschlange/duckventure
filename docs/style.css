@@ -51,7 +51,7 @@ body {
   padding-left: 10%;
 */
   text-align: center;
-
+  visibility: hidden;
 }
 .header a {
   text-decoration: none;
