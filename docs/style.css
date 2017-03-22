@@ -13,11 +13,58 @@ body {
   max-width: 70em;
   background-color: #EEEEEE;
   padding: 10%;
+  padding-top: 0;
   /*padding-top: 2em;
   padding-bottom: 4em;*/
 }
 .wrapper p {
   margin: 1em;
+
+}
+.header {
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: white;
+  width: 100%;
+}
+.header h1 {
+  /*
+  padding-left: 10%;
+*/
+  text-align: center;
+}
+.fakeheader {
+
+  position: static;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: white;
+  width: 100%;
+  margin-bottom: 0em;
+}
+.fakeheader h1 {
+  /*
+  padding-left: 10%;
+*/
+  text-align: center;
+
+}
+.header a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  color: black;
+}
+.header a:hover {
+  color: #a52a2a;
+}
+
+.header a:active {
+  color: #ffe300;
 }
 img {
   max-width: 100%;
