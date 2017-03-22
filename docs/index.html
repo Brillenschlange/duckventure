@@ -38,7 +38,8 @@
 			<li><a href="#Nr5.3">Sprung (bzw. Doppelsprung)</a></li>
 			<li><a href="#Nr5.4">Die Gegner</a></li>
 			<li><a href="#Nr5.5">Die Map</a></li>
-			<li><a href="#Nr5.6">Der Todescounter</a></li>
+			<li><a href="#Nr5.6">Kollision zwischen zwei Objekten</a></li>
+			<li><a href="#Nr5.7">Der Todescounter</a></li>
 		</ol>
 	<li><a href="#Nr6">Fehlende Aspekte im Code</a></li>
 </ol>
@@ -68,13 +69,8 @@
 <p>Das interaktive Spiel bietet alle Features die im Tutorial erklärt worden sind. Die Ente kann sich durch die Steuerung WASD auf den Plattformen bewegen lassen. Sobald die Ente jedoch vollständig im Wasser versinkt, erhöht sich der LifeLostCounter um eine Zahl, es werden die Tode gezählt. Im unteren Bereich des Bildschirm bewegt sich eine Haiflosse und nach einer gewissen Zeit springt ein Hai aus dem Wasser und versucht die Ente zu erwischen.</p>
 
 <h2 id="Nr4">4. Aufbau und Funktion von Duckventure </h2>
-
-<h3 id="Nr4.1">4.1 Aufbau eines MonoGame-Projektes</h3>
-<p>Beim Erstellen eines MonoGame-Projekts ist die Grundlage für das Erstellen und Gestalten eines Spiels durch das Framework XNA in C#bereits gegeben. XNA erstellt ein Projekt, welches sich als interaktives Koordinatensystem, in welchem man Objekte berechnen und zeichnen kann, beschreiben lässt. Im Folgenden ist eine Grafik zu sehen, welche den groben Aufbau und die Funktionen der einzelnen Dateien nach dem Erstellen des MonoGame-Projekts erklärt.</p>
-<p><img src="images/Aufbau_MonoGame.png"></p>
-
-<h3 id="Nr4.2">4.2 Aufbau der Game1.cs</h3>
-<p>Die Game1.cs ist die wichtigste Datei bei der Erstellung eines Spiels. In der Datei werden Objekte erstellt, bewegt und gezeichnet. Dafür stellt es einem mehrere Funktionsabschnitte:
+<p>Beim Erstellen eines MonoGame-Projekts ist die Grundlage für das Erstellen und Gestalten eines Spiels durch das Framework XNA in C# bereits gegeben. XNA erstellt ein Projekt, welches sich als interaktives Koordinatensystem, in welchem man Objekte berechnen und zeichnen kann, beschreiben lässt.</p>
+<p>Die Game1.cs ist die wichtigste Datei bei der Erstellung eines Spiels. In der Datei werden Objekte erstellt, bewegt und gezeichnet. Dafür stellt es einem mehrere Funktionsabschnitte:</p>
 
 <ol>
 <li>LoadContent</li>
@@ -112,9 +108,16 @@
 <p>Die Map bietet die Möglichkeit den Bildschirm in kleine Zellen zu unterteilen und diesen bestimmten Eigenschaften zuzuweisen. Die Breite und Höhe der Map (zu beachten: MAPWIDTH * CellSizeX = DisplaySize.X, damit der komplette Bildschirm gefüllt wird) muss zuerst festgelegt werden.</p>
 <p><img src="images/HöheundBreite.PNG"></p>
 <p>(Codeauszug: Zeilen 8-13 aus Map.cs)</p>
-<p>Die Eigenschaften der Zellen werden in einer weiteren Datei festgelegt. Diese Datei besteht aus Symbolen oder Zahlen der jeweiligen Anzahl der Höhe und Breite der Map.</p>
-
-<h3 id="Nr5.6">5.6 Der Todescounter</h3>
+<p>Die Eigenschaften der Zellen werden in einer weiteren Datei festgelegt. Diese Datei besteht aus Symbolen oder Zahlen der jeweiligen Anzahl der Höhe und Breite der Map. Um Plattformen oder andere Objekte einzubauen, muss ein anderen Symbol in die Map implementiert werden (Bsp.: Wahl der Eigenschaft Luft: . und Eigenschaft Plattform: #).</p>
+<p><img src="images/Map.PNG"></p>
+<p>Die Symbole . und # müssen nun in der Map.cs als Luft und Plattform definiert werden. Dazu wird die Datei Map mithilfe eines Strings ausgelesen und sobald das Symbol # bzw. . gefunden wird, wird diesem die nachstehende Eigenschaft zugewiesen.</p>
+<p><img src="images/CellsProperties.PNG"></p>
+<p>Die Zellen mit den jeweiligen Eigenschaften werden im Draw-Bereich der Game1.cs so gezeichnet, dass die Map-Datei wie im vorherigen Schritt ausgelesen wird und sobald das Symbol einer Plattform gefunden wurde, die Zelltextur der Plattform mit der Breite und Höhe der Zelle gezeichnet wird. Zu beachten: Die Pixelbreite bzw. -höhe der Textur im Content-Ordner sollte im Idealfall der Zellbreite bzw. -höhe exakt entsprechen.
+<p><img src="images/DrawCells.PNG"></p>
+	
+<h3 id="Nr5.6">5.6 Kollision zwischen zwei Objekten</h3>
+	
+<h3 id="Nr5.7">5.7 Der Todescounter</h3>
 <p>Der Todescounter zählt die Tode der Ente. Hierfür muss ein Bereich angegeben werden, in welchem die Ente als tot gilt. Bei unserem Projekt ist dieser Bereich unterhalb des Bildschirm (also y >= DisplaySizeY + enti.Height * entiScale.Y). Wird der Bereich von der Ente erreicht, wird der Todescounter um eine Zahl erhöht und die Position der Ente wird auf die Startposition gesetzt.</p>
 <p><img src="images/Todescounter.PNG"></p>
 <p>(Codeauszug: Zeilen 388-392 aus Game1.cs)</p>
