@@ -30,10 +30,6 @@
 			<li><a href="#Nr3.3">Das interaktive Spiel</a></li>
 		</ol>
 	<li><a href="#Nr4">Aufbau und Funktion von Duckventure</a></li>
-		<ol>
-			<li><a href="#Nr4.1">Aufbau eines MonoGame-Projektes</a></li>
-			<li><a href="#Nr4.2">Aufbau der Game1.cs</a></li>
-		</ol>
 	<li><a href="#Nr5">Einzelne Mechaniken anhand von Code-Ausschnitten</a></li>
 		<ol>
 
@@ -42,6 +38,7 @@
 			<li><a href="#Nr5.3">Sprung (bzw. Doppelsprung)</a></li>
 			<li><a href="#Nr5.4">Die Gegner</a></li>
 			<li><a href="#Nr5.5">Die Map</a></li>
+			<li><a href="#Nr5.6">Der Todescounter</a></li>
 		</ol>
 	<li><a href="#Nr6">Fehlende Aspekte im Code</a></li>
 </ol>
@@ -112,7 +109,18 @@
 <p>(Codeauszug: Zeilen 425-462 aus Game1.cs)</p>
 
 <h3 id="Nr5.5">5.5 Die Map</h3>
-<p>
+<p>Die Map bietet die Möglichkeit den Bildschirm in kleine Zellen zu unterteilen und diesen bestimmten Eigenschaften zuzuweisen. Die Breite und Höhe der Map (zu beachten: MAPWIDTH * CellSizeX = DisplaySize.X, damit der komplette Bildschirm gefüllt wird) muss zuerst festgelegt werden.</p>
+<p><img src="images/HöheundBreite.PNG"></p>
+<p>(Codeauszug: Zeilen 8-13 aus Map.cs)</p>
+<p>Die Eigenschaften der Zellen werden in einer weiteren Datei festgelegt. Diese Datei besteht aus Symbolen oder Zahlen der jeweiligen Anzahl der Höhe und Breite der Map.</p>
+
+<h3 id="Nr5.6">5.6 Der Todescounter</h3>
+<p>Der Todescounter zählt die Tode der Ente. Hierfür muss ein Bereich angegeben werden, in welchem die Ente als tot gilt. Bei unserem Projekt ist dieser Bereich unterhalb des Bildschirm (also y >= DisplaySizeY + enti.Height * entiScale.Y). Wird der Bereich von der Ente erreicht, wird der Todescounter um eine Zahl erhöht und die Position der Ente wird auf die Startposition gesetzt.</p>
+<p><img src="images/Todescounter.PNG"></p>
+<p>(Codeauszug: Zeilen 388-392 aus Game1.cs)</p>
+<p>Die Zahl des erhöhten Todescounters wird im Draw-Bereich im Bildschirm sichtbar gezeichnet. Hierbei bezieht sich die Ausgabe der Zahl auf den Wert des Todescounter (Bsp.: Todescounter = 3: Die Zahl 3 wird vom Program gezeichnet.)</p>
+<p><img src="images/AusgabeTodescounter.PNG"></p>
+<p>(Codeauszug: Zeilen 649-662 aus Game1.cs)</p>	
 
 <h2 id="Nr6">6. Fehlende Aspekte im Code</h2>
 <p>Fehlende Code-Abschnitte sind zum Beispiel die Überprüfung, ob der aus dem Wasser springende Hai die Ente trifft oder nicht. Bei dieser Überprüfung sollte die Ente anschließend an den Anfangspunkt gesetzt werden und der Todescounter um eine Zahl steigen.</p>
