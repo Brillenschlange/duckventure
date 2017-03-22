@@ -43,7 +43,7 @@
 
 <h2 id="Nr2">2. Idee und Konzept</h2>
 <p>"<i>The Duckventure</i>" ist ein 2D Jump'n'Run, welches innerhalb des Informatikunterrichts entstanden ist. Es handelt davon, dass eine kleine Ente sich durch eine begrenzte Map mithilfe der Steuerung WASD bewegten lässt. Die Gegenbeiten sind den wirklichen Gegebenheiten weitesgehend angepasst. Es gibt eine vorherschende Schwerkraft, welche die Ente wieder auf den Boden drückt und ebenfalls einen Gegner der Ente, welcher versucht die Ente zu bekommen.</p>
-<p>Das Spiel ist noch nicht ganz fertiggestellt. Das bedeutet, dass noch einige Bugs zu finden sind und auch einige Dinge erst angedeutet, aber noch nicht vollständig implementiert worden sind. Hierzu jedoch weiteres im Abschnitt "<a href="#Nr5">Fehlende Aspekte im Code</a>"</p>
+<p>Das Spiel ist noch nicht ganz fertiggestellt. Das bedeutet, dass noch einige Bugs zu finden sind und auch einige Dinge erst angedeutet, aber noch nicht vollständig implementiert worden sind. Hierzu jedoch weiteres im Abschnitt "<a href="#Nr6">Fehlende Aspekte im Code</a>"</p>
 
 <h2 id="Nr3">3. Das Spiel</h2>
 <p>Das Spiel "The Duckventure" besteht aus drei verschiedenen mehr oder wenig großen Teilen: dem Startbildschirm, dem Steuerungstutorial und dem interaktivem Spiel.</p>
@@ -94,10 +94,17 @@
 <h3 id="Nr5.3">5.3 Sprung (bzw. Doppelsprung)</h3>
 	
 <h3 id="Nr5.4">5.4 Die Gegner</h3>
+<p>Damit das Spiel nicht an Spannung verliert, braucht es eine Art Gegner für die Ente. Bei Duckventure nimmt ein Hai die Rolle des Gegners ein. Dieser Haiflosse des Hais schwimmt mit einer bestimmten Geschwindigkeit um die x-Koordinate der Ente herum. Er lässt sich wie die Ente in das Projekt am Punkt (x , y) im Abschnitt "Draw" zeichnen. Die Haiflosse erhält, solange die x-Koordinate kleiner als die x-Koordinate der Ente ist eine positive Beschleunigung (1) und sobald sie größer als die x-Koordinate der Ente ist eine negative Beschleunigung (2), sodass die Flosse immer in Bewegung ist und niemals komplett zum Stehen kommt.</p>
+<p><img src="images/Shark.PNG"></p>
+<p>(Codeauszug: Zeilen 407-416 aus Game1.cs)</p>
+<p>Nach jeweils acht Sekunden springt aus der momentanen x-Koordinate der Ente ein Hai und die Haiflosse verschwindet vorerst. Dieser Prozess geschieht so, weil ein Timer (sharkTimer) von 0 bis 8 hochzählt und, sobald die 8 erreicht wurde, die nächste Aktion ausführt. Diese Aktion besteht daraus, dass die Haiflosse nicht mehr gezeichnet wird, der Hai mit einer bestimmten Beschleunigung in -y-Richtung springt und an einem bestimmtem Punkt (Hälfte der Bildschirmhöhe) eine positive Beschleunigung erlangt, sodass er wieder zum Boden hin fällt. Beim Erreichen vom Ende des Bildschirms verschwindet der Hai wieder und die Haiflosse wird anschließend wieder mit ihren alten Bewegungen gezeichnet. Das Zählen mit dem Timer beginnt von vorne, es entsteht eine Dauerschleife der beschriebenen Vorgänge.</p>
+<p><img src="images/SharkJump.PNG"></p> 
+<p>(Codeauszug: Zeilen 425-462 aus Game1.cs)</p>
 	
 <h3 id="Nr5.5">5.5 Die Map</h3>
+<p>
 	
-<h2 id="Nr6">5. Fehlende Aspekte im Code</h2>
+<h2 id="Nr6">6. Fehlende Aspekte im Code</h2>
 <p>Fehlende Code-Abschnitte sind zum Beispiel die Überprüfung, ob der aus dem Wasser springende Hai die Ente trifft oder nicht. Bei dieser Überprüfung sollte die Ente anschließend an den Anfangspunkt gesetzt werden und der Todescounter um eine Zahl steigen.</p>
 <p>Der Todescounter kann zum Stand der Abgabe des Projektes nur bis zur Zahl 9 zählen und zeigt ab der nächsten Zahl nichts mehr an. Für dieses Problem sollten weitere Zahlen vorhanden sein oder ein allgemeiner Todesbildschirm eingeblendet werden (max. 9 Leben).</p>
 <p>In der Map fehlt ein Ziel, damit der Spieler das Level oder das Spiel erfolgreich beenden kann. Es könnte am Ende der Map eine Flagge sein, wo der Spieler durch Berühren zum Startbildschirm gelangt und das Spiel erneut starten kann. Eine weitere Idee wäre, dass der Spieler auf der Map einzelne Münzen oder Gegenstände finden kann und bei einer bestimmten Anzahl an Gegenständen das Spiel erfolgreich geschafft hat.</p>
