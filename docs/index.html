@@ -119,6 +119,13 @@
 <p>(Codeauszug: Ähnlich zu den Zeilen 697-725 aus Game1.cs)</p>
 	
 <h3 id="Nr5.6">5.6 Kollision zwischen zwei Objekten</h3>
+<p>Die Plattformen wurden mithilfe der Map gezeichnet. Allerdings fehlt zu diesem Zeitpunkt noch die Interaktion zwischen der Ente und der Plattform. Die Ente kann nicht auf der Plattform stehen.</p>
+<p>Die Kollision der Ente entsteht so, dass der Ente eine Hitbox zugewiesen wird. Diese Hitbox liegt am untersten mittleren Punkt der Ente.</p>
+<p><img src="images/Hitbox_enti.PNG"></p>
+<p>(Codeauszug: Zeilen 490-494 aus Game1.cs)</p>
+<p>Der Plattform-Zelle wird ebenfalls eine Hitbox zugewiesen. Diese Hitbox liegt am obersten mittleren Punkt der Zelle. Sobald eine Überschneidung der Hitbox der Ente und der der Plattform-Zelle erreicht wird, erfährt die Ente keine Bewegung mehr in y-Richtung. Die Position der Ente wird so angepasst, dass die Ente bei jeder Plattform-Zelle auf der Zelle laufen und springen kann.
+<p><img src="images/Hitbox_intersection.PNG"></p>
+<p>(Codeauszug: Ähnlich zu den Zeilen 512-531 aus Game1.cs)</p>
 	
 <h3 id="Nr5.7">5.7 Der Todescounter</h3>
 <p>Der Todescounter zählt die Tode der Ente. Hierfür muss ein Bereich angegeben werden, in welchem die Ente als tot gilt. Bei unserem Projekt ist dieser Bereich unterhalb des Bildschirm (also y >= DisplaySizeY + enti.Height * entiScale.Y). Wird der Bereich von der Ente erreicht, wird der Todescounter um eine Zahl erhöht und die Position der Ente wird auf die Startposition gesetzt.</p>
