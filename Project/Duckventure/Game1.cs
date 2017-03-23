@@ -197,12 +197,12 @@ namespace Duckventure
             {
 			    if (kState.IsKeyDown (Keys.W) && formerkState.IsKeyUp (Keys.W))
                 {
-				    if (entiRealPosition.Y >= DisplaySizeY + ((enti.Height * entiScale.Y)))
-                    {
-					    entiVelocity.Y = -60;
-					    JumpCounter = 1;
-				    }
-                    else if (JumpCounter < 2)
+//				    if (entiRealPosition.Y >= DisplaySizeY + ((enti.Height * entiScale.Y)))
+//                    {
+//					    entiVelocity.Y = -60;
+//					    JumpCounter = 1;
+//				    }
+                     if (JumpCounter < 2)
                     {
 					    entiVelocity.Y = -60;
 					    JumpCounter += 1;
