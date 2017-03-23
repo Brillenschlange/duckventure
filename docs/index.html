@@ -93,32 +93,32 @@
 <h3 id="Nr5.1">5.1 Schwerkraft</h3>
 <p>Für die Bewegung der Ente brauchen wir zuerst einmal die Schwerkraft. Bevor wir aber irgendwelche Bewegungen der Ente hinzufügen, brauchen wir zuerst einen Vektor, der die Position und einen, der die Geschwindigkeit der Ente darstellt. Dafür haben wir zuerst am Anfang der Game1-Klasse die beiden Variblen vom Typ 2d-Vektor erstellt, "entiRealPosition" und "entiVelocity". Die eigentliche "Magie" passiert dann in der Update-Methode.</p>
 <p>In der Update-Methode wird dem Velocity-Vektor der Ente ein neuer Vektor nach unten addiert. Dieser Vektor wird mit der vergangenen Zeit seit dem letzten "Update" multipliziert, damit die Beschleunigung nicht von der Leistung des Rechners, sondern von der Zeit abhängig ist.</p>
-<img src="images/Gravity1.png">
+<img src="images/Gravity1.PNG">
 <p>(Codeauszug: Zeile 323 aus Game1.cs)</p>
 <p>Ein kleines Detail bei der Bewegung im Allgemeinen ist, dass die Welt größer ist, als der Bildschirmausschnitt. Der Bildschirmausschnitt rückt nach rechts, sobald die Ente den ersten Bereich verlässt. Daher muss man beim Zeichnen unterscheiden zwischen der realen Position der Ente, mit der gerechnet wird, und die Anzeigeposition, wo sie auf dem Bildschirm gezeichnet wird. Dafür gibt es noch die Variable entiDisplayPosition, die ebenfalls in der Update-Methode berechnet wird. Hierbei wird von der RealPosition ein definierter weltVector abgezogen, der aussagt, wie weit der Bildausschnitt vorrangegangen ist. (Da wir bisher nur horizontal scrollen, ist der Y-Teil nicht notwendig.) Der weltVector wird aus der Displaygröße berechnet, sobald die entiDisplayPosition größer ist, als die des Displays, also den Ausschnitt verlässt.</p>
-<img src="images/Gravity2.png">
+<img src="images/Gravity2.PNG">
 <p>(Codeauszug: Zeilen 466-479 aus Game1.cs)</p>
 
 <h3 id="Nr5.2">5.2 Steuerung der Ente</h3>
 <p>Gesteuert wird die Ente, wie schon erwähnt, mit den Tasten W, A, S und D. Um die Tastatureingaben abzugreifen, musss zuerst eine Variable vom Typ KeyboardState erstellt werden für die Keyboardeingaben. Diese wird mit der Funktion Keyboard.GetState() während der Update-Methode mit den aktuellen Zuständen der Tasten gleichgesetzt. In der Variable (genannt kState) lässt sich somit der Zustand jeder einzelnen Taste (gedrückt, nicht gedrückt) abrufen.</p>
-<img src="images/Control1.png">
+<img src="images/Control1.PNG">
 <p>(Codeauszug: Zeile 174 aus Game1.cs)</p>
 <p>In der Update-Methode kann man nun, bedingt von bestimmten gedrückten Tasten in der kState-Variable (z.B. A, S und D) zur Velocity der Ente einen Vektor addieren, je nach dem, wie die Ente beschleunigt wird. Anstatt direkt zur Position einen Vektor zu addieren, addieren wir wir bei der Gravity einen Vektor zur Beschleunigung, um eine flüssige, beschleunigte Bewegung darzustellen. Wie auch bei der Gravitation muss das ganze mit der vergangenen Zeit multipliziert werden, damit die Berechnungen unabhängig von der Geschwindigkeit des Rechners ablaufen.</p>
-<img src="images/Control2.png">
+<img src="images/Control2.PNG">
 <p>(Codeauszug: Zeilen 211-222 aus Game1.cs)</p>
 <p>Zuletzt wird noch die maximale Geschwindigkeit festgelegt, indem die Geschwindigkeit gleich einem festen Wert gesetzt wird, sofern sie ihn vorher  überschreitet.</p>
-<img src="images/Control3.png">
+<img src="images/Control3.PNG">
 <p>(Codeauszug: Zeilen 364-371)</p>
 
 <h3 id="Nr5.3">5.3 Sprung (bzw. Doppelsprung)</h3>
 <p>Der Sprung ist noch etwas komplizierter, weil die nur momentweise nach oben beschleunigt werden soll, anstatt durchgehend zu "fliegen". Zudem haben wir uns dafür entschieden, der Ente einen Doppelsprung zu ermöglichen, um das Gameplay etwas interessanter zu gestalten. Dafür müssen wir bei jedem Update beim nach oben Springen (Drücken der Taste W) überprüfen, ob die Taste beim letzten Update auch schon gedrückt war. Das passiert über eine Variable formerkState, die gleich der alten Variable kState gesetzt wird, noch bevor in der Update-Methode der neue Tastaturzustand auf kState angewandt wird.</p>
-<img src="images/Jump1.png">
-<p>(Codeauszug: Zeile 174 aus Game1.cs)</p>
+<img src="images/Jump1.PNG">
+<p>(Codeauszug: Zeile 225 aus Game1.cs)</p>
 <p>Beim Überprüfen der Taste W wird nun zusätzlich geprüft, ob sie ob die Taste beim letzten Update auch schon gedrückt wurde. Der Vorgang läuft nur weiter ab, wenn der formerkState für W auf nicht gedrückt steht, so passiert der Sprung auch pro längerem Druck der Taste nur einmal, nicht mehrmals. Für den Doppelsprung existiert noch eine Variable JumpCounter, die zählt, wie oft die Ente schon gesprungen ist. Ist die Ente einmal gesprungen, wird der JumpCounter einen hochgesetzt, springen tut sie nur, wenn der JumpCounter unter dem gewünschten Wert für die Anzahl der Sprünge liegt. Im Gegensatz zu den anderen Bewegungen wird der Sprung übrigens nicht addiert, sondern gleich der Velocity gesetzt, um eine sprunghafte Beschleunigung zu erreichen. (Der ausgeklammerte Code ist zu ignorieren.)</p>
-<img src="images/Jump2.png">
+<img src="images/Jump2.PNG">
 <p>(Codeauszug: Zeilen 198-210 aus Game1.cs)</p>
 <p>Zuletzt wird bei vertikalen Kollision nach unten der JumpCounter zurückgesetzt, damit die Ente wieder frisch ihren Doppelsprung starten kann, sobald sie auf einer Plattform gelandet ist.</p>
-<img src="images/Jump3.png">
+<img src="images/Jump3.PNG">
 <p>(Codeauszug: Zeilen 523-528 aus Game1.cs)</p>
 
 <h3 id="Nr5.4">5.4 Die Gegner</h3>
