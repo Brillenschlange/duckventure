@@ -91,8 +91,16 @@
 <p>Im Folgenden werden Bestandteile des Codes erklärt, welche für die Erstellung des Projekts "Duckventure" von hoher Bedeutung sind.</p>
 
 <h3 id="Nr5.1">5.1 Schwerkraft</h3>
+<p>Für die Bewegung der Ente brauchen wir zuerst einmal die Schwerkraft. Bevor wir aber irgendwelche Bewegungen der Ente hinzufügen, brauchen wir zuerst einen Vektor, der die Position und einen, der die Geschwindigkeit der Ente darstellt. Dafür haben wir zuerst am Anfang der Game1-Klasse die beiden Variblen vom Typ 2d-Vektor erstellt, "entiRealPosition" und "entiVelocity". Die eigentliche "Magie" passiert dann in der Update-Methode.</p>
+<p>In der Update-Methode wird dem Velocity-Vektor der Ente ein neuer Vektor nach unten addiert. Dieser Vektor wird mit der vergangenen Zeit seit dem letzten "Update" multipliziert, damit die Beschleunigung nicht von der Leistung des Rechners, sondern von der Zeit abhängig ist.</p>
+<img src="images/Gravity1.png">
+<p>(Codeauszug: Zeile 323 aus Game1.cs)</p>
+<p>Ein kleines Detail bei der Bewegung im Allgemeinen ist, dass die Welt größer ist, als der Bildschirmausschnitt. Der Bildschirmausschnitt rückt nach rechts, sobald die Ente den ersten Bereich verlässt. Daher muss man beim Zeichnen unterscheiden zwischen der realen Position der Ente, mit der gerechnet wird, und die Anzeigeposition, wo sie auf dem Bildschirm gezeichnet wird. Dafür gibt es noch die Variable entiDisplayPosition, die ebenfalls in der Update-Methode berechnet wird. Hierbei wird von der RealPosition ein definierter weltVector abgezogen, der aussagt, wie weit der Bildausschnitt vorrangegangen ist. (Da wir bisher nur horizontal scrollen, ist der Y-Teil nicht notwendig.) Der weltVector wird aus der Displaygröße berechnet, sobald die entiDisplayposition größer ist, als die des Displays, also den Ausschnitt verlässt.</p>
+<img src="images/Gravity2.png">
+<p>(Codeauszug: Zeilen 466-479 aus Game1.cs)</p>
 
 <h3 id="Nr5.2">5.2 Bewegung der Ente</h3>
+
 
 <h3 id="Nr5.3">5.3 Sprung (bzw. Doppelsprung)</h3>
 
@@ -117,7 +125,7 @@
 <p>Die Zellen mit den jeweiligen Eigenschaften werden im Draw-Bereich der Game1.cs so gezeichnet, dass die Auslesung aus dem letzten Schritt hervorgerufen wird und sobald das Symbol einer Plattform gefunden wurde, die Zelltextur der Plattform mit der Breite und Höhe der Zelle gezeichnet wird. Zu beachten: Die Pixelbreite bzw. -höhe der Textur im Content-Ordner sollte im Idealfall der Zellbreite bzw. -höhe exakt entsprechen.
 <p><img src="images/DrawCells.PNG"></p>
 <p>(Codeauszug: Ähnlich zu den Zeilen 697-725 aus Game1.cs)</p>
-	
+
 <h3 id="Nr5.6">5.6 Kollision zwischen zwei Objekten</h3>
 <p>Die Plattformen wurden mithilfe der Map gezeichnet. Allerdings fehlt zu diesem Zeitpunkt noch die Interaktion zwischen der Ente und der Plattform. Die Ente kann nicht auf der Plattform stehen.</p>
 <p>Die Kollision der Ente entsteht so, dass der Ente eine Hitbox zugewiesen wird. Diese Hitbox liegt am untersten mittleren Punkt der Ente.</p>
@@ -126,7 +134,7 @@
 <p>Der Plattform-Zelle wird ebenfalls eine Hitbox zugewiesen. Diese Hitbox liegt am obersten mittleren Punkt der Zelle. Sobald eine Überschneidung der Hitbox der Ente und der der Plattform-Zelle erreicht wird, erfährt die Ente keine Bewegung mehr in y-Richtung. Die Position der Ente wird so angepasst, dass die Ente bei jeder Plattform-Zelle auf der Zelle laufen und springen kann.
 <p><img src="images/Hitbox_intersection.PNG"></p>
 <p>(Codeauszug: Ähnlich zu den Zeilen 512-531 aus Game1.cs)</p>
-	
+
 <h3 id="Nr5.7">5.7 Der Todescounter</h3>
 <p>Der Todescounter zählt die Tode der Ente. Hierfür muss ein Bereich angegeben werden, in welchem die Ente als tot gilt. Bei unserem Projekt ist dieser Bereich unterhalb des Bildschirm (also y >= DisplaySizeY + enti.Height * entiScale.Y). Wird der Bereich von der Ente erreicht, wird der Todescounter um eine Zahl erhöht und die Position der Ente wird auf die Startposition gesetzt.</p>
 <p><img src="images/Todescounter.PNG"></p>
