@@ -47,10 +47,10 @@
 </p>
 
 <h2 id="Nr1">1. Einleitung</h2>
-<p>Dieses Tutorial bezieht sich auf die Erstellung eines 2D Jump'n'Runs. F&uuml;r die Erstellung wird das Framework MonoGame in C&#35; verwendet. Das Tutorial zur Installation von MonoGame unter Windows und Linux lässt sich auf unserer <a href="https://github.com/Brillenschlange/duckventure" target="_blank">GitHub-Seite</a> finden.</p>
-
+<p>Die Dokumentation bezieht sich auf die Erstellung eines 2D Jump'n'Runs. F&uuml;r die Erstellung wird das Framework MonoGame in C&#35; verwendet. Das Tutorial zur Installation von MonoGame unter Windows und Linux lässt sich auf unserer <a href="https://github.com/Brillenschlange/duckventure" target="_blank">GitHub-Seite</a> finden.</p>
+<p>Die Quellen zur Inspiration sind die YouTube-Videos von MoonTaxi (<a href="https://www.youtube.com/watch?v=1VWGGs6axYc&list=PLFOBQ8ri3LGwPnbKuZuPxbTZgB5dGPxkB">Link</a>), wobei wir uns bei dieser Quelle nur die anfängigen Schritte und die Erstellung der Map angeschaut haben, und die Anregegungen von Johannes während des Informatikunterrichts.</p>
 <h2 id="Nr2">2. Idee und Konzept</h2>
-<p>"<i>The Duckventure</i>" ist ein 2D Jump'n'Run, welches innerhalb des Informatikunterrichts entstanden ist. Es handelt davon, dass eine kleine Ente sich durch eine begrenzte Map mithilfe der Steuerung WASD bewegten lässt. Die Gegenbeiten sind den wirklichen Gegebenheiten weitesgehend angepasst. Es gibt eine vorherschende Schwerkraft, welche die Ente wieder auf den Boden drückt und ebenfalls einen Gegner der Ente, welcher versucht die Ente zu bekommen.</p>
+<p>"<i>The Duckventure</i>" ist ein 2D Jump'n'Run, welches innerhalb des Informatikunterrichts entstanden ist. Es handelt davon, dass eine kleine Ente sich durch eine begrenzte Map mithilfe der Steuerung WASD bewegten lässt. Die Gegebenheiten sind den wirklichen Gegebenheiten weitesgehend angepasst. Es gibt eine vorherschende Schwerkraft, welche die Ente wieder auf den Boden drückt und ebenfalls einen Gegner der Ente, welcher versucht die Ente zu bekommen.</p>
 <p>Das Spiel ist noch nicht ganz fertiggestellt. Das bedeutet, dass noch einige Bugs zu finden sind und auch einige Dinge erst angedeutet, aber noch nicht vollständig implementiert worden sind. Hierzu jedoch weiteres im Abschnitt "<a href="#Nr6">Fehlende Aspekte im Code</a>"</p>
 
 <h2 id="Nr3">3. Das Spiel</h2>
@@ -58,7 +58,7 @@
 
 <h3 id="Nr3.1">3.1 Der Startbildschirm</h3>
 <p><img src="images/Start-Screen.PNG"></p>
-<p>Der Startbildschirm ist das erste Fenster, welcher der Spieler auf dem Bildschirm sieht, sobald er das Spiel startet. In diesem bewegt sich die Ente innerhalb der ersten drei Sekunden von links in das Fenster hinein und bleibt schließlich stehen. Es sind die Möglichkeiten zum Weiterspielen (Press Space) und zum Steuerungstutorial (Press P) zu sehen. Auch die Ersteller des Spiels werden auf dem Startbildschirm unten rechts angezeigt.</p>
+<p>Der Startbildschirm ist das erste Fenster, welches der Spieler auf dem Bildschirm sieht, sobald er das Spiel startet. In diesem bewegt sich die Ente innerhalb der ersten drei Sekunden von links in das Fenster hinein und bleibt schließlich stehen. Es sind die Möglichkeiten zum Weiterspielen (Press Space) und zum Steuerungstutorial (Press P) zu sehen. Auch die Ersteller des Spiels werden auf dem Startbildschirm unten rechts angezeigt.</p>
 
 <h3 id="Nr3.2">3.2 Das Steuerungstutorial</h3>
 <p><img src="images/HowToPlay.PNG"></p>
@@ -95,7 +95,7 @@
 <p>In der Update-Methode wird dem Velocity-Vektor der Ente ein neuer Vektor nach unten addiert. Dieser Vektor wird mit der vergangenen Zeit seit dem letzten "Update" multipliziert, damit die Beschleunigung nicht von der Leistung des Rechners, sondern von der Zeit abhängig ist.</p>
 <img src="images/Gravity1.png">
 <p>(Codeauszug: Zeile 323 aus Game1.cs)</p>
-<p>Ein kleines Detail bei der Bewegung im Allgemeinen ist, dass die Welt größer ist, als der Bildschirmausschnitt. Der Bildschirmausschnitt rückt nach rechts, sobald die Ente den ersten Bereich verlässt. Daher muss man beim Zeichnen unterscheiden zwischen der realen Position der Ente, mit der gerechnet wird, und die Anzeigeposition, wo sie auf dem Bildschirm gezeichnet wird. Dafür gibt es noch die Variable entiDisplayPosition, die ebenfalls in der Update-Methode berechnet wird. Hierbei wird von der RealPosition ein definierter weltVector abgezogen, der aussagt, wie weit der Bildausschnitt vorrangegangen ist. (Da wir bisher nur horizontal scrollen, ist der Y-Teil nicht notwendig.) Der weltVector wird aus der Displaygröße berechnet, sobald die entiDisplayposition größer ist, als die des Displays, also den Ausschnitt verlässt.</p>
+<p>Ein kleines Detail bei der Bewegung im Allgemeinen ist, dass die Welt größer ist, als der Bildschirmausschnitt. Der Bildschirmausschnitt rückt nach rechts, sobald die Ente den ersten Bereich verlässt. Daher muss man beim Zeichnen unterscheiden zwischen der realen Position der Ente, mit der gerechnet wird, und die Anzeigeposition, wo sie auf dem Bildschirm gezeichnet wird. Dafür gibt es noch die Variable entiDisplayPosition, die ebenfalls in der Update-Methode berechnet wird. Hierbei wird von der RealPosition ein definierter weltVector abgezogen, der aussagt, wie weit der Bildausschnitt vorrangegangen ist. (Da wir bisher nur horizontal scrollen, ist der Y-Teil nicht notwendig.) Der weltVector wird aus der Displaygröße berechnet, sobald die entiDisplayPosition größer ist, als die des Displays, also den Ausschnitt verlässt.</p>
 <img src="images/Gravity2.png">
 <p>(Codeauszug: Zeilen 466-479 aus Game1.cs)</p>
 
@@ -113,7 +113,7 @@
 <p>(Codeauszug: Zeilen 425-462 aus Game1.cs)</p>
 
 <h3 id="Nr5.5">5.5 Die Map</h3>
-<p>Die Map bietet die Möglichkeit den Bildschirm in kleine Zellen zu unterteilen und diesen bestimmten Eigenschaften zuzuweisen. Die Breite und Höhe der Map (zu beachten: MAPWIDTH * CellSizeX = DisplaySize.X, damit der komplette Bildschirm gefüllt wird) muss zuerst festgelegt werden.</p>
+<p>Die Map bietet die Möglichkeit den Bildschirm in kleine Zellen zu unterteilen und diesen bestimmten Eigenschaften zuzuweisen. Die Breite und Höhe der Map (zu beachten: MAPWIDTH * CellSizeX = DisplaySize.X, damit der komplette Bildschirm gefüllt wird) muss zuerst festgelegt werden. Mit dieser Funktion kann eine Map erstellt werden, die größer als die Bildschirmbreite DisplaySizeX ist, wobei ein weltVector einfügt werden muss.</p>
 <p><img src="images/Höhe&Breite.PNG"></p>
 <p>(Codeauszug: Zeilen 8-13 aus Map.cs)</p>
 <p>Die Eigenschaften der Zellen werden in einer weiteren Datei festgelegt. Diese Datei besteht aus Symbolen oder Zahlen der jeweiligen Anzahl der Höhe und Breite der Map. Um Plattformen oder andere Objekte einzubauen, muss ein anderen Symbol in die Map implementiert werden (Bsp.: Wahl der Eigenschaft Luft: * und Eigenschaft Plattform: #).</p>
