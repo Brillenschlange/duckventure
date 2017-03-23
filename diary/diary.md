@@ -79,7 +79,7 @@ An diesem Tag trafen wir uns am Tag zu einem gruppeninternen Fachtag. An diesem 
 
 <img src="images/Fachtag1.PNG">
 
-Für die Erstellung der Map orientierten wir uns an dem Tutorial über MoonTaxi (oben bereits erwähnt). Wir zeichneten weitere Bilder für die Gestaltung des Bildschirm. Hierzu gehörte die Verbesserung der Ende, der Anfang eines Gegeners und die Textur für die Plattform. Die Kollision von Ente und Plattform wurde an diesem Tag fertiggestellt und auch die Startanimation wurde erweitert, sodass nun weitere Details erkennbar waren.
+Für die Erstellung der Map orientierten wir uns an dem Tutorial über MoonTaxi (oben bereits erwähnt). Wir zeichneten weitere Bilder für die Gestaltung des Bildschirm. Hierzu gehörte die Verbesserung der Ente, der Anfang eines Gegeners und die Textur für die Plattform. Die Kollision von Ente und Plattform wurde an diesem Tag fertiggestellt und auch die Startanimation wurde erweitert, sodass nun weitere Details erkennbar waren.
 
 <img src="images/Fachtag2.PNG">
 
