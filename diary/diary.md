@@ -75,7 +75,7 @@ In der Doppelstunde beschäftigten wir uns mit dem Sprung der Ente. Die Ente sol
 
 <p><h3>Montag, 06.03.2017</h3></p>
 
-An diesem Tag trafen wir uns am Tag zu einem gruppeninternen Fachtag. An diesem Fachtag beschäftigten wir uns mit dem hinzufügen von einem Weltvector im Projekt für einen größeren Bewegungsraum der Ente. Die in der letzten Stunde angesprochene Map war ebenso Teil des Tages. Sie erhielt Plattformen und Anzeichen von Wasser am Boden (das Wasser war zu diesem Zeitpunkt noch nicht sichtbar, sondern nur im Code vorhanden). 
+An diesem Tag trafen wir uns am Tag zu einem gruppeninternen Fachtag. An diesem Fachtag beschäftigten wir uns mit dem Hinzufügen eines Weltvectors im Projekt für einen größeren Bewegungsraum der Ente. Die in der letzten Stunde angesprochene Map war ebenso Teil des Tages. Sie erhielt Plattformen und Anzeichen von Wasser am Boden (das Wasser war zu diesem Zeitpunkt noch nicht sichtbar, sondern nur im Code vorhanden). 
 
 <img src="images/Fachtag1.PNG">
 
